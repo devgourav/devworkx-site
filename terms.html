@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<!-- Created by pdf2htmlEX (https://github.com/coolwanglu/pdf2htmlex) -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta name="generator" content="pdf2htmlEX"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<style type="text/css">
+/*! 
+ * Base CSS for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */#sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.d{display:none}}.pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.pc.opened{display:block}.bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.pf{overflow:visible;border:1px solid #fff}.pc{overflow:visible}}}.c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.t:after{content:''}.t:before{content:'';display:inline-block}.t span{position:relative;unicode-bidi:bidi-override}._{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.pi{display:none}.d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.it{border:0;background-color:rgba(255,255,255,0.0)}.ir:hover{cursor:pointer}</style>
+<style type="text/css">
+/*! 
+ * Fancy styles for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */@keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes swing{0{transform:rotate(0)}10%{transform:rotate(0)}90%{transform:rotate(720deg)}100%{transform:rotate(720deg)}}@-webkit-keyframes swing{0{-webkit-transform:rotate(0)}10%{-webkit-transform:rotate(0)}90%{-webkit-transform:rotate(720deg)}100%{-webkit-transform:rotate(720deg)}}@media screen{#sidebar{background-color:#2f3236;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMNCA0Wk00IDBMMCA0WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+")}#outline{font-family:Georgia,Times,"Times New Roman",serif;font-size:13px;margin:2em 1em}#outline ul{padding:0}#outline li{list-style-type:none;margin:1em 0}#outline li>ul{margin-left:1em}#outline a,#outline a:visited,#outline a:hover,#outline a:active{line-height:1.2;color:#e8e8e8;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;display:block;overflow:hidden;outline:0}#outline a:hover{color:#0cf}#page-container{background-color:#9e9e9e;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOWU5ZTllIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=");-webkit-transition:left 500ms;transition:left 500ms}.pf{margin:13px auto;box-shadow:1px 1px 3px 1px #333;border-collapse:separate}.pc.opened{-webkit-animation:fadein 100ms;animation:fadein 100ms}.loading-indicator.active{-webkit-animation:swing 1.5s ease-in-out .01s infinite alternate none;animation:swing 1.5s ease-in-out .01s infinite alternate none}.checked{background:no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goQDSYgDiGofgAAAslJREFUOMvtlM9LFGEYx7/vvOPM6ywuuyPFihWFBUsdNnA6KLIh+QPx4KWExULdHQ/9A9EfUodYmATDYg/iRewQzklFWxcEBcGgEplDkDtI6sw4PzrIbrOuedBb9MALD7zv+3m+z4/3Bf7bZS2bzQIAcrmcMDExcTeXy10DAFVVAQDksgFUVZ1ljD3yfd+0LOuFpmnvVVW9GHhkZAQcxwkNDQ2FSCQyRMgJxnVdy7KstKZpn7nwha6urqqfTqfPBAJAuVymlNLXoigOhfd5nmeiKL5TVTV+lmIKwAOA7u5u6Lped2BsbOwjY6yf4zgQQkAIAcedaPR9H67r3uYBQFEUFItFtLe332lpaVkUBOHK3t5eRtf1DwAwODiIubk5DA8PM8bYW1EU+wEgCIJqsCAIQAiB7/u253k2BQDDMJBKpa4mEon5eDx+UxAESJL0uK2t7XosFlvSdf0QAEmlUnlRFJ9Waho2Qghc1/U9z3uWz+eX+Wr+lL6SZfleEAQIggA8z6OpqSknimIvYyybSCReMsZ6TislhCAIAti2Dc/zejVNWwCAavN8339j27YbTg0AGGM3WltbP4WhlRWq6Q/btrs1TVsYHx+vNgqKoqBUKn2NRqPFxsbGJzzP05puUlpt0ukyOI6z7zjOwNTU1OLo6CgmJyf/gA3DgKIoWF1d/cIY24/FYgOU0pp0z/Ityzo8Pj5OTk9PbwHA+vp6zWghDC+VSiuRSOQgGo32UErJ38CO42wdHR09LBQK3zKZDDY2NupmFmF4R0cHVlZWlmRZ/iVJUn9FeWWcCCE4ODjYtG27Z2Zm5juAOmgdGAB2d3cBADs7O8uSJN2SZfl+WKlpmpumaT6Yn58vn/fs6XmbhmHMNjc3tzDGFI7jYJrm5vb29sDa2trPC/9aiqJUy5pOp4f6+vqeJ5PJBAB0dnZe/t8NBajx/z37Df5OGX8d13xzAAAAAElFTkSuQmCC)}}</style>
+<style type="text/css">
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;}.ff1{font-family:ff1;line-height:0.991699;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;}.ff2{font-family:ff2;line-height:1.010254;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;}.ff3{font-family:ff3;line-height:0.767578;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff4;}.ff4{font-family:ff4;line-height:1.432129;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff5;}.ff5{font-family:ff5;line-height:1.010254;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff6;}.ff6{font-family:ff6;line-height:1.364258;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.m1{transform:none;-ms-transform:none;-webkit-transform:none;}
+.v0{vertical-align:0.000000px;}
+.ls3{letter-spacing:-0.592000px;}
+.ls7{letter-spacing:-0.512000px;}
+.ls2{letter-spacing:-0.480000px;}
+.ls6{letter-spacing:-0.140000px;}
+.ls4{letter-spacing:-0.111200px;}
+.ls8{letter-spacing:-0.101600px;}
+.ls9{letter-spacing:-0.094000px;}
+.ls0{letter-spacing:0.000000px;}
+.ls1{letter-spacing:0.003840px;}
+.lsa{letter-spacing:0.072800px;}
+.ls5{letter-spacing:0.203600px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws0{word-spacing:0.000000px;}
+._6{margin-left:-11.401280px;}
+._1{margin-left:-8.365760px;}
+._2{margin-left:-5.560000px;}
+._3{margin-left:-2.227520px;}
+._0{margin-left:-1.102720px;}
+._5{width:1.123520px;}
+._8{width:3.041920px;}
+._7{width:4.239360px;}
+._12{width:5.299200px;}
+._e{width:6.311040px;}
+._f{width:7.530560px;}
+._11{width:9.273600px;}
+._c{width:12.054080px;}
+._a{width:13.086400px;}
+._9{width:14.219520px;}
+._b{width:16.143360px;}
+._10{width:17.594880px;}
+._13{width:18.768000px;}
+._15{width:20.931840px;}
+._16{width:22.104320px;}
+._d{width:26.587520px;}
+._17{width:30.735360px;}
+._4{width:43.664000px;}
+._1a{width:51.745280px;}
+._1b{width:63.555200px;}
+._19{width:64.595840px;}
+._18{width:77.446400px;}
+._14{width:99.067520px;}
+.fc0{color:rgb(0,0,0);}
+.fs0{font-size:44.160000px;}
+.y1{bottom:0.000000px;}
+.y86{bottom:81.500000px;}
+.y29{bottom:84.000000px;}
+.ya2{bottom:84.744000px;}
+.y47{bottom:86.904000px;}
+.y85{bottom:87.144000px;}
+.ya1{bottom:103.940000px;}
+.y48{bottom:105.000000px;}
+.y46{bottom:106.100000px;}
+.y84{bottom:106.340000px;}
+.y67{bottom:108.140000px;}
+.ya0{bottom:123.140000px;}
+.y45{bottom:125.300000px;}
+.y83{bottom:125.540000px;}
+.y66{bottom:127.340000px;}
+.y44{bottom:144.260000px;}
+.y9f{bottom:157.340000px;}
+.y82{bottom:159.740000px;}
+.y65{bottom:161.540000px;}
+.y9e{bottom:176.540000px;}
+.y43{bottom:178.700000px;}
+.y81{bottom:178.940000px;}
+.y64{bottom:180.740000px;}
+.y9d{bottom:195.740000px;}
+.y42{bottom:197.900000px;}
+.y80{bottom:198.140000px;}
+.y63{bottom:199.940000px;}
+.y9c{bottom:214.940000px;}
+.y41{bottom:217.100000px;}
+.y7f{bottom:217.340000px;}
+.y62{bottom:219.140000px;}
+.y9b{bottom:233.930000px;}
+.y7e{bottom:236.570000px;}
+.y40{bottom:251.330000px;}
+.y61{bottom:253.370000px;}
+.y7d{bottom:255.770000px;}
+.y9a{bottom:258.170000px;}
+.y3f{bottom:270.530000px;}
+.y60{bottom:272.570000px;}
+.y7c{bottom:274.970000px;}
+.y99{bottom:277.370000px;}
+.y3e{bottom:289.730000px;}
+.y5f{bottom:291.770000px;}
+.y7b{bottom:294.170000px;}
+.y98{bottom:296.570000px;}
+.y3d{bottom:308.930000px;}
+.y5e{bottom:310.970000px;}
+.y7a{bottom:313.370000px;}
+.y97{bottom:315.770000px;}
+.y3c{bottom:327.890000px;}
+.y79{bottom:332.330000px;}
+.y96{bottom:334.970000px;}
+.y1a{bottom:337.500000px;}
+.y5d{bottom:345.170000px;}
+.y95{bottom:354.170000px;}
+.y5c{bottom:364.370000px;}
+.y78{bottom:371.570000px;}
+.y94{bottom:373.370000px;}
+.y28{bottom:374.570000px;}
+.y3b{bottom:377.570000px;}
+.y5b{bottom:383.570000px;}
+.y77{bottom:390.770000px;}
+.y3a{bottom:396.770000px;}
+.y5a{bottom:402.790000px;}
+.y93{bottom:407.590000px;}
+.y27{bottom:408.790000px;}
+.y76{bottom:409.990000px;}
+.y39{bottom:415.990000px;}
+.y59{bottom:421.990000px;}
+.y11{bottom:426.550000px;}
+.y92{bottom:426.790000px;}
+.y75{bottom:429.190000px;}
+.y38{bottom:435.190000px;}
+.y58{bottom:440.950000px;}
+.y26{bottom:442.990000px;}
+.y10{bottom:445.990000px;}
+.y74{bottom:448.390000px;}
+.y25{bottom:462.190000px;}
+.y91{bottom:465.190000px;}
+.yf{bottom:465.790000px;}
+.y37{bottom:469.390000px;}
+.y57{bottom:480.190000px;}
+.y24{bottom:481.390000px;}
+.y73{bottom:482.590000px;}
+.y90{bottom:484.390000px;}
+.ye{bottom:485.590000px;}
+.y36{bottom:488.590000px;}
+.y56{bottom:499.390000px;}
+.y72{bottom:501.790000px;}
+.yd{bottom:505.270000px;}
+.y35{bottom:507.790000px;}
+.y23{bottom:515.590000px;}
+.y55{bottom:518.590000px;}
+.y71{bottom:520.990000px;}
+.yc{bottom:525.070000px;}
+.y34{bottom:526.990000px;}
+.y22{bottom:534.790000px;}
+.y54{bottom:537.790000px;}
+.y70{bottom:540.190000px;}
+.yb{bottom:544.750000px;}
+.y33{bottom:546.190000px;}
+.y53{bottom:556.990000px;}
+.y6f{bottom:559.390000px;}
+.ya{bottom:564.550000px;}
+.y21{bottom:568.990000px;}
+.y8f{bottom:575.950000px;}
+.y52{bottom:576.190000px;}
+.y32{bottom:580.420000px;}
+.y9{bottom:584.380000px;}
+.y20{bottom:588.220000px;}
+.y12{bottom:593.500000px;}
+.y6e{bottom:593.620000px;}
+.y51{bottom:595.180000px;}
+.y31{bottom:599.620000px;}
+.y8e{bottom:600.220000px;}
+.y8{bottom:604.060000px;}
+.y6d{bottom:612.820000px;}
+.y50{bottom:614.620000px;}
+.y30{bottom:618.820000px;}
+.y8d{bottom:619.420000px;}
+.y1f{bottom:622.420000px;}
+.y7{bottom:623.860000px;}
+.y6c{bottom:632.020000px;}
+.y4f{bottom:633.820000px;}
+.y19{bottom:635.500000px;}
+.y2f{bottom:638.020000px;}
+.y8c{bottom:638.620000px;}
+.y1e{bottom:641.620000px;}
+.y6{bottom:643.540000px;}
+.y4e{bottom:653.020000px;}
+.y18{bottom:654.700000px;}
+.y2e{bottom:657.220000px;}
+.y8b{bottom:657.820000px;}
+.y1d{bottom:660.820000px;}
+.y5{bottom:663.340000px;}
+.y6b{bottom:666.220000px;}
+.y4d{bottom:672.220000px;}
+.y17{bottom:673.900000px;}
+.y2d{bottom:676.420000px;}
+.y8a{bottom:677.020000px;}
+.y4{bottom:683.140000px;}
+.y6a{bottom:685.420000px;}
+.y1c{bottom:688.660000px;}
+.y4c{bottom:691.420000px;}
+.y16{bottom:693.100000px;}
+.y2c{bottom:695.620000px;}
+.y89{bottom:696.220000px;}
+.y3{bottom:697.780000px;}
+.y4b{bottom:710.620000px;}
+.y15{bottom:712.300000px;}
+.y2b{bottom:714.580000px;}
+.y88{bottom:715.420000px;}
+.y69{bottom:719.620000px;}
+.y0{bottom:720.500000px;}
+.y2{bottom:723.220000px;}
+.y4a{bottom:729.820000px;}
+.y14{bottom:731.500000px;}
+.y87{bottom:734.620000px;}
+.y1b{bottom:738.220000px;}
+.y49{bottom:748.780000px;}
+.y68{bottom:753.580000px;}
+.y2a{bottom:753.820000px;}
+.y13{bottom:759.600000px;}
+.h1{height:24.000000px;}
+.h2{height:32.085000px;}
+.h3{height:32.149687px;}
+.h4{height:33.486562px;}
+.hc{height:38.500000px;}
+.h9{height:45.906562px;}
+.h8{height:46.618125px;}
+.h5{height:154.000000px;}
+.h6{height:422.000000px;}
+.ha{height:665.000000px;}
+.h7{height:686.000000px;}
+.hb{height:688.500000px;}
+.h0{height:841.920000px;}
+.w1{width:454.500000px;}
+.w3{width:459.000000px;}
+.w2{width:595.319991px;}
+.w0{width:595.320000px;}
+.x1{left:0.000009px;}
+.x5{left:66.000000px;}
+.x6{left:67.463991px;}
+.x0{left:70.500000px;}
+.x2{left:72.023991px;}
+.x8{left:75.023991px;}
+.x3{left:83.063991px;}
+.x4{left:90.023991px;}
+.x9{left:111.019991px;}
+.x7{left:126.019991px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls3{letter-spacing:-0.789333pt;}
+.ls7{letter-spacing:-0.682667pt;}
+.ls2{letter-spacing:-0.640000pt;}
+.ls6{letter-spacing:-0.186667pt;}
+.ls4{letter-spacing:-0.148267pt;}
+.ls8{letter-spacing:-0.135467pt;}
+.ls9{letter-spacing:-0.125333pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ls1{letter-spacing:0.005120pt;}
+.lsa{letter-spacing:0.097067pt;}
+.ls5{letter-spacing:0.271467pt;}
+.ws0{word-spacing:0.000000pt;}
+._6{margin-left:-15.201707pt;}
+._1{margin-left:-11.154347pt;}
+._2{margin-left:-7.413333pt;}
+._3{margin-left:-2.970027pt;}
+._0{margin-left:-1.470293pt;}
+._5{width:1.498027pt;}
+._8{width:4.055893pt;}
+._7{width:5.652480pt;}
+._12{width:7.065600pt;}
+._e{width:8.414720pt;}
+._f{width:10.040747pt;}
+._11{width:12.364800pt;}
+._c{width:16.072107pt;}
+._a{width:17.448533pt;}
+._9{width:18.959360pt;}
+._b{width:21.524480pt;}
+._10{width:23.459840pt;}
+._13{width:25.024000pt;}
+._15{width:27.909120pt;}
+._16{width:29.472427pt;}
+._d{width:35.450027pt;}
+._17{width:40.980480pt;}
+._4{width:58.218667pt;}
+._1a{width:68.993707pt;}
+._1b{width:84.740267pt;}
+._19{width:86.127787pt;}
+._18{width:103.261867pt;}
+._14{width:132.090027pt;}
+.fs0{font-size:58.880000pt;}
+.y1{bottom:0.000000pt;}
+.y86{bottom:108.666667pt;}
+.y29{bottom:112.000000pt;}
+.ya2{bottom:112.992000pt;}
+.y47{bottom:115.872000pt;}
+.y85{bottom:116.192000pt;}
+.ya1{bottom:138.586667pt;}
+.y48{bottom:140.000000pt;}
+.y46{bottom:141.466667pt;}
+.y84{bottom:141.786667pt;}
+.y67{bottom:144.186667pt;}
+.ya0{bottom:164.186667pt;}
+.y45{bottom:167.066667pt;}
+.y83{bottom:167.386667pt;}
+.y66{bottom:169.786667pt;}
+.y44{bottom:192.346667pt;}
+.y9f{bottom:209.786667pt;}
+.y82{bottom:212.986667pt;}
+.y65{bottom:215.386667pt;}
+.y9e{bottom:235.386667pt;}
+.y43{bottom:238.266667pt;}
+.y81{bottom:238.586667pt;}
+.y64{bottom:240.986667pt;}
+.y9d{bottom:260.986667pt;}
+.y42{bottom:263.866667pt;}
+.y80{bottom:264.186667pt;}
+.y63{bottom:266.586667pt;}
+.y9c{bottom:286.586667pt;}
+.y41{bottom:289.466667pt;}
+.y7f{bottom:289.786667pt;}
+.y62{bottom:292.186667pt;}
+.y9b{bottom:311.906667pt;}
+.y7e{bottom:315.426667pt;}
+.y40{bottom:335.106667pt;}
+.y61{bottom:337.826667pt;}
+.y7d{bottom:341.026667pt;}
+.y9a{bottom:344.226667pt;}
+.y3f{bottom:360.706667pt;}
+.y60{bottom:363.426667pt;}
+.y7c{bottom:366.626667pt;}
+.y99{bottom:369.826667pt;}
+.y3e{bottom:386.306667pt;}
+.y5f{bottom:389.026667pt;}
+.y7b{bottom:392.226667pt;}
+.y98{bottom:395.426667pt;}
+.y3d{bottom:411.906667pt;}
+.y5e{bottom:414.626667pt;}
+.y7a{bottom:417.826667pt;}
+.y97{bottom:421.026667pt;}
+.y3c{bottom:437.186667pt;}
+.y79{bottom:443.106667pt;}
+.y96{bottom:446.626667pt;}
+.y1a{bottom:450.000000pt;}
+.y5d{bottom:460.226667pt;}
+.y95{bottom:472.226667pt;}
+.y5c{bottom:485.826667pt;}
+.y78{bottom:495.426667pt;}
+.y94{bottom:497.826667pt;}
+.y28{bottom:499.426667pt;}
+.y3b{bottom:503.426667pt;}
+.y5b{bottom:511.426667pt;}
+.y77{bottom:521.026667pt;}
+.y3a{bottom:529.026667pt;}
+.y5a{bottom:537.053333pt;}
+.y93{bottom:543.453333pt;}
+.y27{bottom:545.053333pt;}
+.y76{bottom:546.653333pt;}
+.y39{bottom:554.653333pt;}
+.y59{bottom:562.653333pt;}
+.y11{bottom:568.733333pt;}
+.y92{bottom:569.053333pt;}
+.y75{bottom:572.253333pt;}
+.y38{bottom:580.253333pt;}
+.y58{bottom:587.933333pt;}
+.y26{bottom:590.653333pt;}
+.y10{bottom:594.653333pt;}
+.y74{bottom:597.853333pt;}
+.y25{bottom:616.253333pt;}
+.y91{bottom:620.253333pt;}
+.yf{bottom:621.053333pt;}
+.y37{bottom:625.853333pt;}
+.y57{bottom:640.253333pt;}
+.y24{bottom:641.853333pt;}
+.y73{bottom:643.453333pt;}
+.y90{bottom:645.853333pt;}
+.ye{bottom:647.453333pt;}
+.y36{bottom:651.453333pt;}
+.y56{bottom:665.853333pt;}
+.y72{bottom:669.053333pt;}
+.yd{bottom:673.693333pt;}
+.y35{bottom:677.053333pt;}
+.y23{bottom:687.453333pt;}
+.y55{bottom:691.453333pt;}
+.y71{bottom:694.653333pt;}
+.yc{bottom:700.093333pt;}
+.y34{bottom:702.653333pt;}
+.y22{bottom:713.053333pt;}
+.y54{bottom:717.053333pt;}
+.y70{bottom:720.253333pt;}
+.yb{bottom:726.333333pt;}
+.y33{bottom:728.253333pt;}
+.y53{bottom:742.653333pt;}
+.y6f{bottom:745.853333pt;}
+.ya{bottom:752.733333pt;}
+.y21{bottom:758.653333pt;}
+.y8f{bottom:767.933333pt;}
+.y52{bottom:768.253333pt;}
+.y32{bottom:773.893333pt;}
+.y9{bottom:779.173333pt;}
+.y20{bottom:784.293333pt;}
+.y12{bottom:791.333333pt;}
+.y6e{bottom:791.493333pt;}
+.y51{bottom:793.573333pt;}
+.y31{bottom:799.493333pt;}
+.y8e{bottom:800.293333pt;}
+.y8{bottom:805.413333pt;}
+.y6d{bottom:817.093333pt;}
+.y50{bottom:819.493333pt;}
+.y30{bottom:825.093333pt;}
+.y8d{bottom:825.893333pt;}
+.y1f{bottom:829.893333pt;}
+.y7{bottom:831.813333pt;}
+.y6c{bottom:842.693333pt;}
+.y4f{bottom:845.093333pt;}
+.y19{bottom:847.333333pt;}
+.y2f{bottom:850.693333pt;}
+.y8c{bottom:851.493333pt;}
+.y1e{bottom:855.493333pt;}
+.y6{bottom:858.053333pt;}
+.y4e{bottom:870.693333pt;}
+.y18{bottom:872.933333pt;}
+.y2e{bottom:876.293333pt;}
+.y8b{bottom:877.093333pt;}
+.y1d{bottom:881.093333pt;}
+.y5{bottom:884.453333pt;}
+.y6b{bottom:888.293333pt;}
+.y4d{bottom:896.293333pt;}
+.y17{bottom:898.533333pt;}
+.y2d{bottom:901.893333pt;}
+.y8a{bottom:902.693333pt;}
+.y4{bottom:910.853333pt;}
+.y6a{bottom:913.893333pt;}
+.y1c{bottom:918.213333pt;}
+.y4c{bottom:921.893333pt;}
+.y16{bottom:924.133333pt;}
+.y2c{bottom:927.493333pt;}
+.y89{bottom:928.293333pt;}
+.y3{bottom:930.373333pt;}
+.y4b{bottom:947.493333pt;}
+.y15{bottom:949.733333pt;}
+.y2b{bottom:952.773333pt;}
+.y88{bottom:953.893333pt;}
+.y69{bottom:959.493333pt;}
+.y0{bottom:960.666667pt;}
+.y2{bottom:964.293333pt;}
+.y4a{bottom:973.093333pt;}
+.y14{bottom:975.333333pt;}
+.y87{bottom:979.493333pt;}
+.y1b{bottom:984.293333pt;}
+.y49{bottom:998.373333pt;}
+.y68{bottom:1004.773333pt;}
+.y2a{bottom:1005.093333pt;}
+.y13{bottom:1012.800000pt;}
+.h1{height:32.000000pt;}
+.h2{height:42.780000pt;}
+.h3{height:42.866250pt;}
+.h4{height:44.648750pt;}
+.hc{height:51.333333pt;}
+.h9{height:61.208750pt;}
+.h8{height:62.157500pt;}
+.h5{height:205.333333pt;}
+.h6{height:562.666667pt;}
+.ha{height:886.666667pt;}
+.h7{height:914.666667pt;}
+.hb{height:918.000000pt;}
+.h0{height:1122.560000pt;}
+.w1{width:606.000000pt;}
+.w3{width:612.000000pt;}
+.w2{width:793.759988pt;}
+.w0{width:793.760000pt;}
+.x1{left:0.000012pt;}
+.x5{left:88.000000pt;}
+.x6{left:89.951988pt;}
+.x0{left:94.000000pt;}
+.x2{left:96.031988pt;}
+.x8{left:100.031988pt;}
+.x3{left:110.751988pt;}
+.x4{left:120.031988pt;}
+.x9{left:148.026655pt;}
+.x7{left:168.026655pt;}
+}
+</style>
+<script>
+/*
+ Copyright 2012 Mozilla Foundation 
+ Copyright 2013 Lu Wang <coolwanglu@gmail.com>
+ Apachine License Version 2.0 
+*/
+(function(){function b(a,b,e,f){var c=(a.className||"").split(/\s+/g);""===c[0]&&c.shift();var d=c.indexOf(b);0>d&&e&&c.push(b);0<=d&&f&&c.splice(d,1);a.className=c.join(" ");return 0<=d}if(!("classList"in document.createElement("div"))){var e={add:function(a){b(this.element,a,!0,!1)},contains:function(a){return b(this.element,a,!1,!1)},remove:function(a){b(this.element,a,!1,!0)},toggle:function(a){b(this.element,a,!0,!0)}};Object.defineProperty(HTMLElement.prototype,"classList",{get:function(){if(this._classList)return this._classList;
+var a=Object.create(e,{element:{value:this,writable:!1,enumerable:!0}});Object.defineProperty(this,"_classList",{value:a,writable:!1,enumerable:!1});return a},enumerable:!0})}})();
+</script>
+<script>
+(function(){/*
+ pdf2htmlEX.js: Core UI functions for pdf2htmlEX 
+ Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> and other contributors 
+ https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE 
+*/
+var pdf2htmlEX=window.pdf2htmlEX=window.pdf2htmlEX||{},CSS_CLASS_NAMES={page_frame:"pf",page_content_box:"pc",page_data:"pi",background_image:"bi",link:"l",input_radio:"ir",__dummy__:"no comma"},DEFAULT_CONFIG={container_id:"page-container",sidebar_id:"sidebar",outline_id:"outline",loading_indicator_cls:"loading-indicator",preload_pages:3,render_timeout:100,scale_step:0.9,key_handler:!0,hashchange_handler:!0,view_history_handler:!0,__dummy__:"no comma"},EPS=1E-6;
+function invert(a){var b=a[0]*a[3]-a[1]*a[2];return[a[3]/b,-a[1]/b,-a[2]/b,a[0]/b,(a[2]*a[5]-a[3]*a[4])/b,(a[1]*a[4]-a[0]*a[5])/b]}function transform(a,b){return[a[0]*b[0]+a[2]*b[1]+a[4],a[1]*b[0]+a[3]*b[1]+a[5]]}function get_page_number(a){return parseInt(a.getAttribute("data-page-no"),16)}function disable_dragstart(a){for(var b=0,c=a.length;b<c;++b)a[b].addEventListener("dragstart",function(){return!1},!1)}
+function clone_and_extend_objs(a){for(var b={},c=0,e=arguments.length;c<e;++c){var h=arguments[c],d;for(d in h)h.hasOwnProperty(d)&&(b[d]=h[d])}return b}
+function Page(a){if(a){this.shown=this.loaded=!1;this.page=a;this.num=get_page_number(a);this.original_height=a.clientHeight;this.original_width=a.clientWidth;var b=a.getElementsByClassName(CSS_CLASS_NAMES.page_content_box)[0];b&&(this.content_box=b,this.original_scale=this.cur_scale=this.original_height/b.clientHeight,this.page_data=JSON.parse(a.getElementsByClassName(CSS_CLASS_NAMES.page_data)[0].getAttribute("data-data")),this.ctm=this.page_data.ctm,this.ictm=invert(this.ctm),this.loaded=!0)}}
+Page.prototype={hide:function(){this.loaded&&this.shown&&(this.content_box.classList.remove("opened"),this.shown=!1)},show:function(){this.loaded&&!this.shown&&(this.content_box.classList.add("opened"),this.shown=!0)},rescale:function(a){this.cur_scale=0===a?this.original_scale:a;this.loaded&&(a=this.content_box.style,a.msTransform=a.webkitTransform=a.transform="scale("+this.cur_scale.toFixed(3)+")");a=this.page.style;a.height=this.original_height*this.cur_scale+"px";a.width=this.original_width*this.cur_scale+
+"px"},view_position:function(){var a=this.page,b=a.parentNode;return[b.scrollLeft-a.offsetLeft-a.clientLeft,b.scrollTop-a.offsetTop-a.clientTop]},height:function(){return this.page.clientHeight},width:function(){return this.page.clientWidth}};function Viewer(a){this.config=clone_and_extend_objs(DEFAULT_CONFIG,0<arguments.length?a:{});this.pages_loading=[];this.init_before_loading_content();var b=this;document.addEventListener("DOMContentLoaded",function(){b.init_after_loading_content()},!1)}
+Viewer.prototype={scale:1,cur_page_idx:0,first_page_idx:0,init_before_loading_content:function(){this.pre_hide_pages()},initialize_radio_button:function(){for(var a=document.getElementsByClassName(CSS_CLASS_NAMES.input_radio),b=0;b<a.length;b++)a[b].addEventListener("click",function(){this.classList.toggle("checked")})},init_after_loading_content:function(){this.sidebar=document.getElementById(this.config.sidebar_id);this.outline=document.getElementById(this.config.outline_id);this.container=document.getElementById(this.config.container_id);
+this.loading_indicator=document.getElementsByClassName(this.config.loading_indicator_cls)[0];for(var a=!0,b=this.outline.childNodes,c=0,e=b.length;c<e;++c)if("ul"===b[c].nodeName.toLowerCase()){a=!1;break}a||this.sidebar.classList.add("opened");this.find_pages();if(0!=this.pages.length){disable_dragstart(document.getElementsByClassName(CSS_CLASS_NAMES.background_image));this.config.key_handler&&this.register_key_handler();var h=this;this.config.hashchange_handler&&window.addEventListener("hashchange",
+function(a){h.navigate_to_dest(document.location.hash.substring(1))},!1);this.config.view_history_handler&&window.addEventListener("popstate",function(a){a.state&&h.navigate_to_dest(a.state)},!1);this.container.addEventListener("scroll",function(){h.update_page_idx();h.schedule_render(!0)},!1);[this.container,this.outline].forEach(function(a){a.addEventListener("click",h.link_handler.bind(h),!1)});this.initialize_radio_button();this.render()}},find_pages:function(){for(var a=[],b={},c=this.container.childNodes,
+e=0,h=c.length;e<h;++e){var d=c[e];d.nodeType===Node.ELEMENT_NODE&&d.classList.contains(CSS_CLASS_NAMES.page_frame)&&(d=new Page(d),a.push(d),b[d.num]=a.length-1)}this.pages=a;this.page_map=b},load_page:function(a,b,c){var e=this.pages;if(!(a>=e.length||(e=e[a],e.loaded||this.pages_loading[a]))){var e=e.page,h=e.getAttribute("data-page-url");if(h){this.pages_loading[a]=!0;var d=e.getElementsByClassName(this.config.loading_indicator_cls)[0];"undefined"===typeof d&&(d=this.loading_indicator.cloneNode(!0),
+d.classList.add("active"),e.appendChild(d));var f=this,g=new XMLHttpRequest;g.open("GET",h,!0);g.onload=function(){if(200===g.status||0===g.status){var b=document.createElement("div");b.innerHTML=g.responseText;for(var d=null,b=b.childNodes,e=0,h=b.length;e<h;++e){var p=b[e];if(p.nodeType===Node.ELEMENT_NODE&&p.classList.contains(CSS_CLASS_NAMES.page_frame)){d=p;break}}b=f.pages[a];f.container.replaceChild(d,b.page);b=new Page(d);f.pages[a]=b;b.hide();b.rescale(f.scale);disable_dragstart(d.getElementsByClassName(CSS_CLASS_NAMES.background_image));
+f.schedule_render(!1);c&&c(b)}delete f.pages_loading[a]};g.send(null)}void 0===b&&(b=this.config.preload_pages);0<--b&&(f=this,setTimeout(function(){f.load_page(a+1,b)},0))}},pre_hide_pages:function(){var a="@media screen{."+CSS_CLASS_NAMES.page_content_box+"{display:none;}}",b=document.createElement("style");b.styleSheet?b.styleSheet.cssText=a:b.appendChild(document.createTextNode(a));document.head.appendChild(b)},render:function(){for(var a=this.container,b=a.scrollTop,c=a.clientHeight,a=b-c,b=
+b+c+c,c=this.pages,e=0,h=c.length;e<h;++e){var d=c[e],f=d.page,g=f.offsetTop+f.clientTop,f=g+f.clientHeight;g<=b&&f>=a?d.loaded?d.show():this.load_page(e):d.hide()}},update_page_idx:function(){var a=this.pages,b=a.length;if(!(2>b)){for(var c=this.container,e=c.scrollTop,c=e+c.clientHeight,h=-1,d=b,f=d-h;1<f;){var g=h+Math.floor(f/2),f=a[g].page;f.offsetTop+f.clientTop+f.clientHeight>=e?d=g:h=g;f=d-h}this.first_page_idx=d;for(var g=h=this.cur_page_idx,k=0;d<b;++d){var f=a[d].page,l=f.offsetTop+f.clientTop,
+f=f.clientHeight;if(l>c)break;f=(Math.min(c,l+f)-Math.max(e,l))/f;if(d===h&&Math.abs(f-1)<=EPS){g=h;break}f>k&&(k=f,g=d)}this.cur_page_idx=g}},schedule_render:function(a){if(void 0!==this.render_timer){if(!a)return;clearTimeout(this.render_timer)}var b=this;this.render_timer=setTimeout(function(){delete b.render_timer;b.render()},this.config.render_timeout)},register_key_handler:function(){var a=this;window.addEventListener("DOMMouseScroll",function(b){if(b.ctrlKey){b.preventDefault();var c=a.container,
+e=c.getBoundingClientRect(),c=[b.clientX-e.left-c.clientLeft,b.clientY-e.top-c.clientTop];a.rescale(Math.pow(a.config.scale_step,b.detail),!0,c)}},!1);window.addEventListener("keydown",function(b){var c=!1,e=b.ctrlKey||b.metaKey,h=b.altKey;switch(b.keyCode){case 61:case 107:case 187:e&&(a.rescale(1/a.config.scale_step,!0),c=!0);break;case 173:case 109:case 189:e&&(a.rescale(a.config.scale_step,!0),c=!0);break;case 48:e&&(a.rescale(0,!1),c=!0);break;case 33:h?a.scroll_to(a.cur_page_idx-1):a.container.scrollTop-=
+a.container.clientHeight;c=!0;break;case 34:h?a.scroll_to(a.cur_page_idx+1):a.container.scrollTop+=a.container.clientHeight;c=!0;break;case 35:a.container.scrollTop=a.container.scrollHeight;c=!0;break;case 36:a.container.scrollTop=0,c=!0}c&&b.preventDefault()},!1)},rescale:function(a,b,c){var e=this.scale;this.scale=a=0===a?1:b?e*a:a;c||(c=[0,0]);b=this.container;c[0]+=b.scrollLeft;c[1]+=b.scrollTop;for(var h=this.pages,d=h.length,f=this.first_page_idx;f<d;++f){var g=h[f].page;if(g.offsetTop+g.clientTop>=
+c[1])break}g=f-1;0>g&&(g=0);var g=h[g].page,k=g.clientWidth,f=g.clientHeight,l=g.offsetLeft+g.clientLeft,m=c[0]-l;0>m?m=0:m>k&&(m=k);k=g.offsetTop+g.clientTop;c=c[1]-k;0>c?c=0:c>f&&(c=f);for(f=0;f<d;++f)h[f].rescale(a);b.scrollLeft+=m/e*a+g.offsetLeft+g.clientLeft-m-l;b.scrollTop+=c/e*a+g.offsetTop+g.clientTop-c-k;this.schedule_render(!0)},fit_width:function(){var a=this.cur_page_idx;this.rescale(this.container.clientWidth/this.pages[a].width(),!0);this.scroll_to(a)},fit_height:function(){var a=this.cur_page_idx;
+this.rescale(this.container.clientHeight/this.pages[a].height(),!0);this.scroll_to(a)},get_containing_page:function(a){for(;a;){if(a.nodeType===Node.ELEMENT_NODE&&a.classList.contains(CSS_CLASS_NAMES.page_frame)){a=get_page_number(a);var b=this.page_map;return a in b?this.pages[b[a]]:null}a=a.parentNode}return null},link_handler:function(a){var b=a.target,c=b.getAttribute("data-dest-detail");if(c){if(this.config.view_history_handler)try{var e=this.get_current_view_hash();window.history.replaceState(e,
+"","#"+e);window.history.pushState(c,"","#"+c)}catch(h){}this.navigate_to_dest(c,this.get_containing_page(b));a.preventDefault()}},navigate_to_dest:function(a,b){try{var c=JSON.parse(a)}catch(e){return}if(c instanceof Array){var h=c[0],d=this.page_map;if(h in d){for(var f=d[h],h=this.pages[f],d=2,g=c.length;d<g;++d){var k=c[d];if(null!==k&&"number"!==typeof k)return}for(;6>c.length;)c.push(null);var g=b||this.pages[this.cur_page_idx],d=g.view_position(),d=transform(g.ictm,[d[0],g.height()-d[1]]),
+g=this.scale,l=[0,0],m=!0,k=!1,n=this.scale;switch(c[1]){case "XYZ":l=[null===c[2]?d[0]:c[2]*n,null===c[3]?d[1]:c[3]*n];g=c[4];if(null===g||0===g)g=this.scale;k=!0;break;case "Fit":case "FitB":l=[0,0];k=!0;break;case "FitH":case "FitBH":l=[0,null===c[2]?d[1]:c[2]*n];k=!0;break;case "FitV":case "FitBV":l=[null===c[2]?d[0]:c[2]*n,0];k=!0;break;case "FitR":l=[c[2]*n,c[5]*n],m=!1,k=!0}if(k){this.rescale(g,!1);var p=this,c=function(a){l=transform(a.ctm,l);m&&(l[1]=a.height()-l[1]);p.scroll_to(f,l)};h.loaded?
+c(h):(this.load_page(f,void 0,c),this.scroll_to(f))}}}},scroll_to:function(a,b){var c=this.pages;if(!(0>a||a>=c.length)){c=c[a].view_position();void 0===b&&(b=[0,0]);var e=this.container;e.scrollLeft+=b[0]-c[0];e.scrollTop+=b[1]-c[1]}},get_current_view_hash:function(){var a=[],b=this.pages[this.cur_page_idx];a.push(b.num);a.push("XYZ");var c=b.view_position(),c=transform(b.ictm,[c[0],b.height()-c[1]]);a.push(c[0]/this.scale);a.push(c[1]/this.scale);a.push(this.scale);return JSON.stringify(a)}};
+pdf2htmlEX.Viewer=Viewer;})();
+</script>
+<script>
+try{
+pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
+}catch(e){}
+</script>
+<title></title>
+</head>
+<body>
+<div id="sidebar">
+<div id="outline">
+</div>
+</div>
+<div id="page-container">
+<div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA40AAAAwCAIAAAA6ighYAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA3UlEQVR42u3WQQ0AAAjEMMC/58MGCa2EvdZJCgAAjhkJAADwqQAA4FMBAPCpAADgUwEA8KkAAOBTAQDApwIA4FMBAMCnAgDgUwEAwKcCAOBTAQDApwIAgE8FAMCnAgCATwUAwKcCAIBPBQDApwIAgE8FAACfCgCATwUAAJ8KAIBPBQAAnwoAgE8FAACfCgAAPhUAAJ8KAAA+FQAAnwoAAD4VAACfCgAAPhUAAHwqAAA+FQAAfCoAAD4VAAB8KgAAPhUAAHwqAAD4VAAAfCoAAPhUAAB8KgAA+FQAAJ5awkwDXTjhGJsAAAAASUVORK5CYII="/><div class="c x1 y1 w2 h0"><div class="t m0 x2 h2 y2 ff1 fs0 fc0 sc0 ls0 ws0">VODA TERMS A<span class="_ _0"></span>ND CON<span class="_ _0"></span>DITIONS </div><div class="t m0 x2 h3 y3 ff2 fs0 fc0 sc0 ls0 ws0">Contents </div><div class="t m0 x3 h3 y4 ff1 fs0 fc0 sc0 ls0 ws0">VODA TERMS A<span class="_ _0"></span>ND CON<span class="_ _0"></span>DITIONS<span class="ff2"> <span class="_ _1"></span>............................................................................................... <span class="_ _2"></span>1 </span></div><div class="t m0 x3 h3 y5 ff1 fs0 fc0 sc0 ls0 ws0">Introduction to <span class="_ _0"></span>the Terms and C<span class="_ _0"></span>onditions<span class="ff2"> <span class="_ _3"></span>...................................................................................... <span class="_ _2"></span>2 </span></div><div class="t m0 x3 h3 y6 ff1 fs0 fc0 sc0 ls0 ws0">Definitions<span class="ff2"> <span class="_ _3"></span>............................................................................................................................................. <span class="_ _2"></span>3 </span></div><div class="t m0 x3 h3 y7 ff1 fs0 fc0 sc0 ls0 ws0">1.<span class="ff2"> <span class="_ _4"> </span></span>Scope &amp; Nature of<span class="_ _3"></span> O<span class="_ _5"></span>ur Service<span class="ff2"> <span class="_ _3"></span>.................................................................................................. <span class="_ _2"></span>4 </span></div><div class="t m0 x3 h3 y8 ff1 fs0 fc0 sc0 ls0 ws0">2.<span class="ff2"> <span class="_ _4"> </span></span>Prices and Rates<span class="_ _0"></span><span class="ff2"> <span class="_ _1"></span>............................................................................................................................. <span class="_ _2"></span>4 </span></div><div class="t m0 x3 h3 y9 ff2 fs0 fc0 sc0 ls0 ws0">3. <span class="_ _4"> </span><span class="ff1">Free Service</span> <span class="_ _3"></span>.................................................................................................................................... <span class="_ _2"></span>4 </div><div class="t m0 x3 h3 ya ff1 fs0 fc0 sc0 ls0 ws0">4.<span class="ff2"> <span class="_ _4"> </span></span>Debit/Credit Card/, <span class="_ _3"></span>Mpesa and/ or Bank Transf<span class="_ _3"></span>er<span class="_ _5"></span><span class="ff2"> <span class="_ _3"></span>................................................................. <span class="_ _2"></span>5 </span></div><div class="t m0 x3 h3 yb ff2 fs0 fc0 sc0 ls0 ws0">5. <span class="_ _4"> </span><span class="ff1">Prepayment, <span class="_ _0"></span>No- show and Cancel<span class="_ _0"></span>lation.<span class="ff2"> <span class="_ _2"></span>................................................................................ <span class="_ _2"></span>5 </span></span></div><div class="t m0 x3 h3 yc ff1 fs0 fc0 sc0 ls0 ws0">6.<span class="ff2"> <span class="_ _4"> </span></span>Correspondence and<span class="_ _0"></span> Communi<span class="_ _3"></span>cation<span class="ff2">....................................................................................... <span class="_ _2"></span>5 </span></div><div class="t m0 x3 h3 yd ff1 fs0 fc0 sc0 ls0 ws0">7.<span class="ff2"> <span class="_ _4"> </span></span>Ranking and Gu<span class="_ _0"></span>est Reviews<span class="ff2"> <span class="_ _6"></span>....................................................................................................... <span class="_ _2"></span>6 </span></div><div class="t m0 x3 h3 ye ff1 fs0 fc0 sc0 ls0 ws0">8.<span class="ff2"> <span class="_ _4"> </span></span>Disclaimer<span class="ff2"> <span class="_ _6"></span>....................................................................................................................................... <span class="_ _2"></span>6 </span></div><div class="t m0 x3 h3 yf ff1 fs0 fc0 sc0 ls0 ws0">9.<span class="ff2"> <span class="_ _4"> </span></span>Intellectual Proper<span class="_ _3"></span>t<span class="_ _5"></span>y Rights<span class="ff2"> <span class="_ _2"></span>........................................................................................................ <span class="_ _2"></span>7 </span></div><div class="t m0 x3 h3 y10 ff1 fs0 fc0 sc0 ls0 ws0">10.Applicable <span class="_ _0"></span>law, jurisdiction<span class="_ _0"></span> &amp; dispute r<span class="_ _0"></span>esolution<span class="ff2"> <span class="_ _1"></span>.................................................................... <span class="_ _2"></span>7 </span></div><div class="t m0 x2 h4 y11 ff3 fs0 fc0 sc0 ls0 ws0"> </div></div><a class="l" href="#pf1" data-dest-detail='[1,"XYZ",69,769,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:673.920000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf1" data-dest-detail='[1,"XYZ",69,414,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:654.160000px;width:461.000000px;height:19.760000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf2" data-dest-detail='[2,"XYZ",457,651,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:634.410000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf4" data-dest-detail='[4,"XYZ",69,735,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:614.660000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf4" data-dest-detail='[4,"XYZ",69,374,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:594.910000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf4" data-dest-detail='[4,"XYZ",69,160,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:575.160000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf5" data-dest-detail='[5,"XYZ",69,769,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:555.410000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf5" data-dest-detail='[5,"XYZ",69,611,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:535.650000px;width:461.000000px;height:19.760000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf5" data-dest-detail='[5,"XYZ",69,462,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:515.900000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf5" data-dest-detail='[5,"XYZ",262,124,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:496.150000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf6" data-dest-detail='[6,"XYZ",69,353,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:476.400000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf7" data-dest-detail='[7,"XYZ",69,597,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:456.650000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf7" data-dest-detail='[7,"XYZ",69,255,null]'><div class="d m1" style="border-style:none;position:absolute;left:80.750000px;bottom:436.900000px;width:461.000000px;height:19.750000px;background-color:rgba(255,255,255,0.000001);"></div></a></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf2" class="pf w0 h0" data-page-no="2"><div class="pc pc2 w0 h0"><div class="c x1 y1 w2 h0"><div class="t m0 x2 h2 y13 ff1 fs0 fc0 sc0 ls0 ws0">Introduction to <span class="_ _0"></span>the Terms and Con<span class="_ _0"></span>ditions </div><div class="t m0 x2 h3 y14 ff2 fs0 fc0 sc0 ls0 ws0">The <span class="_ _7"></span>terms <span class="_ _7"></span>and<span class="_ _0"></span> <span class="_ _7"></span>condition<span class="_ _0"></span>s, <span class="_ _7"></span>and <span class="_ _7"></span>the <span class="_ _7"></span>am<span class="_ _0"></span>endments<span class="_ _0"></span> <span class="_ _7"></span>that <span class="_ _7"></span>shall <span class="_ _8"></span>be <span class="_ _7"></span>made <span class="_ _8"></span>hereto, <span class="_ _7"></span>apply <span class="_ _7"></span>to <span class="_ _7"></span>all <span class="_ _7"></span>the </div><div class="t m0 x2 h3 y15 ff2 fs0 fc0 sc0 ls0 ws0">services <span class="_ _9"> </span>available <span class="_ _9"> </span>on <span class="_ _9"> </span>this <span class="_ _9"> </span>site, <span class="_ _9"> </span>through <span class="_ _9"> </span>any <span class="_ _9"> </span>electronic <span class="_ _9"> </span>device, <span class="_ _9"> </span>email,<span class="_ _0"></span> <span class="_ _9"> </span>or <span class="_ _9"> </span>telephone. <span class="_ _9"> </span>By </div><div class="t m0 x2 h3 y16 ff2 fs0 fc0 sc0 ls0 ws0">accessing <span class="_ _8"></span>the <span class="_ _8"></span>content <span class="_ _8"></span>in <span class="_ _8"></span>our <span class="_ _8"></span>application <span class="_ _8"></span>(hereafter <span class="_ _8"></span><span class="ls1">th</span>e <span class="_ _8"></span>&quot;App&quot;) <span class="_ _8"></span>and/or <span class="_ _8"></span>by <span class="_ _8"></span>a <span class="_ _8"></span>reservation, <span class="_ _8"></span>you </div><div class="t m0 x2 h3 y17 ff2 fs0 fc0 sc0 ls0 ws0">acknowledge and agree to have <span class="_ _5"></span>read, understood,<span class="_ _0"></span> and agreed to <span class="_ _5"></span>the terms an<span class="_ _5"></span>d conditions <span class="_ _5"></span><span class="ls2">as </span></div><div class="t m0 x2 h3 y18 ff2 fs0 fc0 sc0 ls0 ws0">set <span class="_ _5"></span>out <span class="_ _5"></span>herein. <span class="_ _8"></span>The content <span class="_ _5"></span>arrived <span class="_ _5"></span>at <span class="_ _8"></span>throu<span class="_ _0"></span>gh <span class="_ _5"></span>this <span class="_ _8"></span>App are <span class="_ _8"></span>ow<span class="_ _3"></span>n<span class="_ _5"></span>ed <span class="_ _5"></span>and <span class="_ _5"></span>operated <span class="_ _5"></span>exclusively </div><div class="t m0 x2 h3 y19 ff2 fs0 fc0 sc0 ls0 ws0">by Aqua Authe<span class="_ _0"></span>ntica Limited, subje<span class="_ _0"></span>ct to the terms <span class="_ _0"></span>and conditions <span class="_ _0"></span>set out below.  </div></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf3" class="pf w0 h0" data-page-no="3"><div class="pc pc3 w0 h0"><div class="c x1 y1 w2 h0"><div class="t m0 x2 h2 y1b ff1 fs0 fc0 sc0 ls0 ws0"> </div><div class="t m0 x2 h2 y1c ff1 fs0 fc0 sc0 ls0 ws0">Definitions </div><div class="t m0 x2 h3 y1d ff2 fs0 fc0 sc0 ls0 ws0">&quot;<span class="ff1">Voda</span>,&quot; <span class="_ _9"> </span>&quot;u<span class="_ _3"></span>s,&quot; <span class="_ _9"> </span>&quot;we,&quot; <span class="_ _a"> </span>or <span class="_ _a"> </span>&quot;our&quot; <span class="_ _a"> </span>means <span class="_ _a"> </span>an <span class="_ _a"> </span>app <span class="_ _a"> </span>owned, <span class="_ _a"> </span>managed <span class="_ _a"> </span>and <span class="_ _a"> </span>contro<span class="_ _0"></span>lled <span class="_ _a"> </span>by <span class="_ _a"> </span>Aqua<span class="_ _0"></span> </div><div class="t m0 x2 h3 y1e ff2 fs0 fc0 sc0 ls0 ws0">Authentica Limited, a limited liability company incorporated under the <span class="_ _5"></span>laws of th<span class="_ _5"></span>e Republic </div><div class="t m0 x2 h3 y1f ff2 fs0 fc0 sc0 ls0 ws0">of Kenya, and <span class="_ _0"></span>having its r<span class="_ _0"></span>egistered address at P.O<span class="_ _3"></span> BOX 1297- 80100, Mombasa, Ke<span class="_ _0"></span>nya.   </div><div class="t m0 x2 h3 y20 ff2 fs0 fc0 sc0 ls0 ws0">&quot;<span class="ff1">App</span>&quot; <span class="_ _b"> </span>means <span class="_ _b"> </span>the <span class="_ _b"> </span>platfor<span class="_ _0"></span>m <span class="_ _b"> </span>on <span class="_ _b"> </span>which <span class="_ _b"> </span>the <span class="_ _b"> </span>booking <span class="_ _b"> </span>service <span class="_ _b"> </span>is <span class="_ _b"> </span>made, <span class="_ _b"> </span>available <span class="_ _b"> </span>owned, </div><div class="t m0 x2 h3 y21 ff2 fs0 fc0 sc0 ls0 ws0">controlled, ma<span class="_ _0"></span>naged, maintained, and<span class="_ _3"></span>/or hosted by Aqua Aut<span class="_ _0"></span>hentica Lim<span class="_ _0"></span>ited.  </div><div class="t m0 x2 h3 y22 ff2 fs0 fc0 sc0 ls0 ws0">&quot;<span class="ff1">Goods</span>&quot;  means <span class="_ _a"> </span>t<span class="_ _3"></span>h<span class="_ _5"></span>e  various  dif<span class="_ _5"></span>ferent <span class="_ _c"> </span>Voda  products  and <span class="_ _c"> </span>services <span class="_ _c"> </span>that  can <span class="_ _c"> </span>be <span class="_ _c"> </span>ordered, </div><div class="t m0 x2 h3 y23 ff2 fs0 fc0 sc0 ls0 ws0">acquired, purc<span class="_ _0"></span>hased, bought, paid, pr<span class="_ _0"></span>ovided, or consumm<span class="_ _0"></span>ated by you fro<span class="_ _3"></span>m the App. </div><div class="t m0 x2 h3 y24 ff2 fs0 fc0 sc0 ls0 ws0">&quot;<span class="ff1">App <span class="_ _9"> </span>Service</span>&quot; <span class="_ _9"> </span>means <span class="_ _a"> </span>the <span class="_ _b"> </span>onl<span class="_ _0"></span>ine <span class="_ _9"> </span>purchase, <span class="_ _a"> </span>order, <span class="_ _9"> </span>(facilitated) <span class="_ _9"> </span>payment, <span class="_ _a"> </span>or <span class="_ _9"> </span>reservation </div><div class="t m0 x2 h3 y25 ff2 fs0 fc0 sc0 ls0 ws0">service <span class="_ _5"></span>as <span class="_ _5"></span>offered or <span class="_ _5"></span>enabled <span class="_ _5"></span>by <span class="_ _5"></span>the <span class="_ _5"></span>App <span class="_ _5"></span>in <span class="_ _5"></span>respect <span class="_ _5"></span>to <span class="_ _5"></span>various <span class="_ _5"></span>products and <span class="_ _5"></span>services <span class="_ _5"></span>as <span class="_ _5"></span>fr<span class="_ _5"></span><span class="ls3">om </span></div><div class="t m0 x2 h3 y26 ff2 fs0 fc0 sc0 ls0 ws0">time to time made ava<span class="_ _3"></span>il<span class="_ _5"></span>able on the <span class="_ _3"></span>A<span class="_ _5"></span>pp. </div><div class="t m0 x2 h3 y27 ff2 fs0 fc0 sc0 ls0 ws0">&quot;<span class="ff1">Order</span>&quot; means the p<span class="_ _0"></span>urchase, paymen<span class="_ _3"></span>t, b<span class="_ _5"></span>ooking, o<span class="_ _0"></span>r reservation o<span class="_ _0"></span>f a Good. </div><div class="t m0 x2 h3 y28 ff2 fs0 fc0 sc0 ls0 ws0"> </div></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf4" class="pf w0 h0" data-page-no="4"><div class="pc pc4 w0 h0"><div class="c x1 y1 w2 h0"><div class="t m0 x2 h3 y2a ff2 fs0 fc0 sc0 ls0 ws0"> </div><div class="t m0 x4 h8 y2b ff1 fs0 fc0 sc0 ls0 ws0">1.<span class="ff4"> <span class="_ _d"> </span></span>Scope &amp; Nature of<span class="_ _3"></span> O<span class="_ _5"></span>ur Service </div><div class="t m0 x2 h3 y2c ff2 fs0 fc0 sc0 ls0 ws0">Through <span class="_ _8"></span>the <span class="_ _5"></span>App, <span class="_ _8"></span>we <span class="_ _8"></span>provide <span class="_ _8"></span>an <span class="_ _8"></span>o<span class="_ _0"></span>nline <span class="_ _8"></span>platform <span class="_ _5"></span>through <span class="_ _8"></span>which <span class="_ _8"></span>we <span class="_ _8"></span>can <span class="_ _8"></span>adver<span class="_ _0"></span>tise, <span class="_ _8"></span>market, </div><div class="t m0 x2 h3 y2d ff2 fs0 fc0 sc0 ls0 ws0">sell, <span class="_ _e"> </span>promote, <span class="_ _e"> </span>and/or<span class="_ _3"></span> <span class="_ _f"> </span>offer <span class="_ _e"> </span>our <span class="_ _e"> </span>Goods <span class="_ _e"> </span>for <span class="_ _e"> </span>order<span class="_ _0"></span>, <span class="_ _e"> </span>purchase, <span class="_ _e"> </span>reservation,<span class="_ _3"></span> <span class="_ _e"> </span>h<span class="_ _5"></span>ire, <span class="_ _e"> </span>and <span class="_ _e"> </span>through </div><div class="t m0 x2 h3 y2e ff2 fs0 fc0 sc0 ls0 ws0">which relevant co<span class="_ _0"></span>nsumers can mak<span class="_ _0"></span>e an order, r<span class="_ _0"></span>eservation, purchase, or<span class="_ _0"></span> payment of Good<span class="_ _0"></span>s. </div><div class="t m0 x2 h3 y2f ff2 fs0 fc0 sc0 ls0 ws0"> </div><div class="t m0 x2 h3 y30 ff2 fs0 fc0 sc0 ls0 ws0">By <span class="_ _b"> </span>using <span class="_ _10"> </span>or <span class="_ _b"> </span>utilizing <span class="_ _b"> </span>the<span class="_ _5"></span> <span class="_ _b"> </span>A<span class="_ _5"></span>pp, <span class="_ _b"> </span>you <span class="_ _10"> </span>enter <span class="_ _b"> </span>into <span class="_ _b"> </span>a <span class="_ _10"> </span>direct <span class="_ _10"> </span>(legally <span class="_ _b"> </span>binding) <span class="_ _b"> </span>contractual </div><div class="t m0 x2 h3 y31 ff2 fs0 fc0 sc0 ls0 ws0">relationship <span class="_ _11"> </span>with <span class="_ _11"> </span>the  Pr<span class="_ _3"></span>ovider  with <span class="_ _11"> </span>which <span class="_ _11"> </span>you <span class="_ _11"> </span>make  a <span class="_ _11"> </span>reserv<span class="_ _0"></span>ation <span class="_ _11"> </span>or <span class="_ _11"> </span>p<span class="_ _5"></span>urchase <span class="_ _11"> </span>a  Voda<span class="_ _3"></span> </div><div class="t m0 x2 h3 y32 ff2 fs0 fc0 sc0 ls0 ws0">product.  </div><div class="t m0 x2 h3 y33 ff2 fs0 fc0 sc0 ls0 ws0">Aqua Authentica Limited <span class="_ _5"></span>is <span class="_ _5"></span>fully <span class="_ _5"></span>responsible for <span class="_ _5"></span>updating <span class="_ _5"></span>all <span class="_ _5"></span>rates/fees<span class="_ _0"></span>/prices, availability,<span class="_ _0"></span> </div><div class="t m0 x2 h3 y34 ff2 fs0 fc0 sc0 ls0 ws0">policies, <span class="_ _12"></span>conditions, <span class="_ _7"></span>and <span class="_ _12"> </span>other <span class="_ _e"> </span>relevant <span class="_ _12"> </span>information <span class="_ _12"> </span>that <span class="_ _12"> </span>gets <span class="_ _12"> </span>displayed <span class="_ _12"></span>on <span class="_ _12"> </span>the <span class="_ _12"> </span>App<span class="_ _5"></span>. <span class="_ _12"> </span>Voda </div><div class="t m0 x2 h3 y35 ff2 fs0 fc0 sc0 ls0 ws0">cannot <span class="_ _8"></span>be <span class="_ _8"></span>held <span class="_ _8"></span>responsible <span class="_ _8"></span>for <span class="_ _8"></span>any <span class="_ _8"></span>errors, <span class="_ _8"></span>any <span class="_ _8"></span>interruptions <span class="_ _8"></span>due <span class="_ _8"></span>to <span class="_ _8"></span>any <span class="_ _8"></span>breakdown, <span class="_ _8"></span>repair, </div><div class="t m0 x2 h3 y36 ff2 fs0 fc0 sc0 ls0 ws0">upgrade, <span class="_ _9"> </span>or <span class="_ _b"> </span>maintenance <span class="_ _b"> </span>of <span class="_ _b"> </span>the <span class="_ _b"> </span>App <span class="_ _9"> </span>or <span class="_ _b"> </span>otherwise, <span class="_ _b"> </span>inaccurate, <span class="_ _9"> </span>misleading, <span class="_ _b"> </span>or <span class="_ _b"> </span>u<span class="_ _0"></span>ntrue </div><div class="t m0 x2 h3 y37 ff2 fs0 fc0 sc0 ls0 ws0">information, nor <span class="_ _3"></span>n<span class="_ _5"></span>on-delivery of informa<span class="_ _3"></span>tion.  </div><div class="t m0 x2 h3 y38 ff2 fs0 fc0 sc0 ls0 ws0">Our <span class="_ _7"></span>App <span class="_ _12"> </span>is <span class="_ _12"></span>made <span class="_ _7"></span>available <span class="_ _7"></span>for <span class="_ _12"></span>personal <span class="_ _7"></span>and <span class="_ _7"></span>non-<span class="_ _5"></span>commer<span class="_ _0"></span>cial <span class="_ _7"></span>use <span class="_ _12"> </span>only. <span class="_ _7"></span>Therefore, <span class="_ _7"></span>you <span class="_ _12"> </span>are </div><div class="t m0 x2 h3 y39 ff2 fs0 fc0 sc0 ls0 ws0">not <span class="_ _12"> </span>allowed <span class="_ _12"> </span>to <span class="_ _12"> </span>resell, <span class="_ _e"> </span>deep <span class="_ _12"></span>link, <span class="_ _12"> </span>use, <span class="_ _12"> </span>copy, <span class="_ _e"> </span>monitor, <span class="_ _12"> </span>display, <span class="_ _12"> </span>download, <span class="_ _12"></span>or <span class="_ _12"></span>reproduce <span class="_ _7"></span>any </div><div class="t m0 x2 h3 y3a ff2 fs0 fc0 sc0 ls0 ws0">content <span class="_ _5"></span>or <span class="_ _5"></span>information, <span class="_ _5"></span>software, <span class="_ _5"></span>orders, <span class="_ _5"></span>or <span class="_ _8"></span>good<span class="_ _3"></span>s <span class="_ _8"></span>avai<span class="_ _0"></span>lable <span class="_ _8"></span>on our <span class="_ _8"></span>App for <span class="_ _5"></span>any <span class="_ _8"></span>comme<span class="_ _0"></span>rcial </div><div class="t m0 x2 h3 y3b ff2 fs0 fc0 sc0 ls0 ws0">or competitive activ<span class="_ _3"></span>ity or purpose. </div><div class="t m0 x4 h8 y3c ff1 fs0 fc0 sc0 ls0 ws0">2.<span class="ff4"> <span class="_ _d"> </span></span>Prices and Rates<span class="_ _0"></span> </div><div class="t m0 x2 h3 y3d ff2 fs0 fc0 sc0 ls0 ws0">As <span class="_ _8"></span>a <span class="_ _8"></span>consumer<span class="_ _0"></span> <span class="_ _8"></span>you <span class="_ _8"></span>s<span class="_ _3"></span>h<span class="_ _5"></span>all <span class="_ _8"></span>be <span class="_ _8"></span>required, <span class="_ _8"></span>to <span class="_ _5"></span>pay <span class="_ _8"></span>fully <span class="_ _8"></span>at <span class="_ _8"></span>the <span class="_ _8"></span>t<span class="_ _3"></span>ime <span class="_ _8"></span>of <span class="_ _8"></span>confirming <span class="_ _8"></span><span class="ls4">of</span> <span class="_ _8"></span>the <span class="_ _8"></span>book<span class="_ _0"></span>ing.<span class="_ _3"></span> </div><div class="t m0 x2 h3 y3e ff2 fs0 fc0 sc0 ls0 ws0">Online <span class="_ _7"></span>payments <span class="_ _7"></span>can <span class="_ _7"></span>be <span class="_ _7"></span>made <span class="_ _7"></span>through <span class="_ _7"></span>our <span class="_ _7"></span>secure <span class="_ _7"></span>third <span class="_ _7"></span>party<span class="ff5 ls5">’s</span> <span class="_ _7"></span>mobile <span class="_ _7"></span>payment <span class="_ _7"></span>provider. </div><div class="t m0 x2 h3 y3f ff2 fs0 fc0 sc0 ls0 ws0">All <span class="_ _e"> </span>prices <span class="_ _e"> </span>for <span class="_ _e"> </span>the <span class="_ _f"> </span>Goods <span class="_ _e"> </span>are <span class="_ _e"> </span>displayed <span class="_ _e"> </span>and <span class="_ _f"> </span>all <span class="_ _e"> </span>inclusive <span class="_ _e"> </span>of <span class="_ _e"> </span>taxes. <span class="_ _f"> </span>Applicable <span class="_ _12"> </span>fees <span class="_ _e"> </span>may <span class="_ _f"> </span>be </div><div class="t m0 x2 h3 y40 ff2 fs0 fc0 sc0 ls0 ws0">charged in the eve<span class="_ _0"></span>nt of a cancellat<span class="_ _0"></span>ion. </div><div class="t m0 x2 h3 y41 ff2 fs0 fc0 sc0 ls0 ws0">Obvious <span class="_ _e"> </span>errors <span class="_ _12"> </span>and <span class="_ _e"> </span>mistakes <span class="_ _e"> </span>(including <span class="_ _12"> </span>misprints) <span class="_ _e"> </span>are <span class="_ _e"> </span>not <span class="_ _e"> </span>binding. <span class="_ _12"> </span>All <span class="_ _e"> </span>special <span class="_ _e"> </span>offers <span class="_ _e"> </span>and </div><div class="t m0 x2 h3 y42 ff2 fs0 fc0 sc0 ls0 ws0">promotions are marked as <span class="_ _5"></span>such. <span class="_ _5"></span>If they are <span class="_ _5"></span>not labeled as <span class="_ _5"></span>such, you cannot <span class="_ _5"></span>derive any rights </div><div class="t m0 x2 h3 y43 ff2 fs0 fc0 sc0 ls0 ws0">in the event o<span class="_ _0"></span>f obvious error<span class="_ _0"></span>s or mistakes. </div><div class="t m0 x4 h9 y44 ff2 fs0 fc0 sc0 ls0 ws0">3.<span class="ff6"> <span class="_ _d"> </span><span class="ff1">Free Service</span></span> </div><div class="t m0 x2 h3 y45 ff2 fs0 fc0 sc0 ls0 ws0">Unless indicated otherwi<span class="_ _0"></span>se, usage of the App is f<span class="_ _5"></span>ree of charge for consumers. The App is not </div><div class="t m0 x2 h3 y46 ff2 fs0 fc0 sc0 ls0 ws0">an <span class="_ _5"></span>open platform; it <span class="_ _5"></span>does<span class="_ _0"></span> n<span class="_ _5"></span>ot allow non-<span class="ls6">pro</span>f<span class="_ _5"></span>essio<span class="_ _0"></span>nal parties to <span class="_ _5"></span>offer <span class="_ _5"></span>or sell their <span class="_ _5"></span>products on </div><div class="t m0 x2 h3 y47 ff2 fs0 fc0 sc0 ls0 ws0">or through our<span class="_ _0"></span> App. </div></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf5" class="pf w0 h0" data-page-no="5"><div class="pc pc5 w0 h0"><div class="c x1 y1 w2 h0"><div class="t m0 x4 h8 y49 ff1 fs0 fc0 sc0 ls0 ws0">4.<span class="ff4"> <span class="_ _d"> </span></span>Mpesa Transfe<span class="_ _0"></span>r </div><div class="t m0 x2 h3 y4a ff2 fs0 fc0 sc0 ls0 ws0">Payment <span class="_ _7"></span>is <span class="_ _12"> </span>safely <span class="_ _7"></span>processed <span class="_ _12"></span>from <span class="_ _7"></span>your <span class="_ _12"></span>mobile <span class="_ _7"></span>device<span class="_ _5"></span> <span class="_ _12"></span>to <span class="_ _7"></span>the <span class="_ _12"> </span>bank <span class="_ _12"></span>account <span class="_ _7"></span>of <span class="_ _12"></span>the <span class="_ _7"></span>P<span class="_ _5"></span>rovider </div><div class="t m0 x2 h3 y4b ff2 fs0 fc0 sc0 ls0 ws0">through <span class="_ _10"> </span>a <span class="_ _b"> </span>th<span class="_ _5"></span>ird <span class="_ _10"> </span>party <span class="_ _b"> </span>payment <span class="_ _13"> </span>processor<span class="_ _0"></span> <span class="_ _10"> </span>(Mpesa). <span class="_ _10"> </span>Check <span class="_ _b"> </span>the <span class="_ _10"> </span>details <span class="_ _10"> </span>of <span class="_ _10"> </span>your <span class="_ _10"> </span>order<span class="_ _0"></span> </div><div class="t m0 x2 h3 y4c ff2 fs0 fc0 sc0 ls0 ws0">thoroughly <span class="_ _a"> </span>prior <span class="_ _c"> </span>to <span class="_ _9"> </span>making <span class="_ _c"> </span>your <span class="_ _a"> </span>payment. <span class="_ _a"> </span>You <span class="_ _a"> </span>will <span class="_ _a"> </span>not <span class="_ _a"> </span>hold <span class="_ _9"> </span>the <span class="_ _c"> </span>Providers<span class="_ _5"></span> <span class="_ _a"> </span>liable <span class="_ _a"> </span>or </div><div class="t m0 x2 h3 y4d ff2 fs0 fc0 sc0 ls0 ws0">responsible <span class="_ _12"> </span>for <span class="_ _f"> </span>any <span class="_ _e"> </span>unauthorized <span class="_ _e"> </span>or <span class="_ _e"> </span>erroneous <span class="_ _e"> </span><span class="ff5">charge. <span class="_ _e"> </span>Aqua <span class="_ _e"> </span>Authentica <span class="_ _e"> </span>Limited’s</span> <span class="_ _f"> </span>secur<span class="_ _0"></span>e </div><div class="t m0 x2 h3 y4e ff2 fs0 fc0 sc0 ls0 ws0">server <span class="_ _11"> </span>does  not <span class="_ _11"> </span>take <span class="_ _11"> </span>liability <span class="_ _11"> </span>for  any <span class="_ _11"> </span>loss <span class="_ _11"> </span>incurred <span class="_ _11"> </span>through  the  use <span class="_ _11"> </span>of<span class="_ _0"></span> <span class="_ _11"> </span>your  App <span class="_ _11"> </span>whil<span class="ls7">e </span></div><div class="t m0 x2 h3 y4f ff2 fs0 fc0 sc0 ls0 ws0">making payments<span class="_ _0"></span>. </div><div class="t m0 x2 h3 y50 ff2 fs0 fc0 sc0 ls0 ws0"> </div><div class="t m0 x6 h9 y51 ff2 fs0 fc0 sc0 ls0 ws0">5.<span class="ff6"> <span class="_ _14"> </span><span class="ff1">Prepayment, No- sho<span class="_ _0"></span>w and Cancel<span class="_ _0"></span>lation.<span class="ff2"> </span></span></span></div><div class="t m0 x6 h3 y52 ff2 fs0 fc0 sc0 ls0 ws0">By <span class="_ _e"> </span>making <span class="_ _e"> </span>an <span class="_ _e"> </span>order <span class="_ _12"> </span>wi<span class="_ _5"></span>th <span class="_ _e"> </span>Vo<span class="ls8">da</span>, <span class="_ _e"> </span>you <span class="_ _e"> </span>accept <span class="_ _e"> </span>and <span class="_ _e"> </span>agree <span class="_ _e"> </span>to <span class="_ _e"> </span>th<span class="_ _5"></span>e <span class="_ _e"> </span>relevant <span class="_ _e"> </span>policies, <span class="_ _12"> </span>an<span class="_ _5"></span>d <span class="_ _12"> </span>to <span class="_ _f"> </span>any<span class="_ _0"></span> </div><div class="t m0 x6 h3 y53 ff2 fs0 fc0 sc0 ls0 ws0">additional <span class="_ _9"> </span>terms <span class="_ _b"> </span>a<span class="_ _3"></span>n<span class="_ _5"></span>d <span class="_ _b"> </span>c<span class="_ _0"></span>onditions <span class="_ _9"> </span>that <span class="_ _b"> </span>may <span class="_ _a"> </span>apply <span class="_ _b"> </span>to <span class="_ _9"> </span>your <span class="_ _b"> </span>orde<span class="_ _0"></span>r, <span class="_ _b"> </span>inclu<span class="_ _0"></span>ding <span class="_ _9"> </span>for <span class="_ _b"> </span>service<span class="_ _3"></span>s </div><div class="t m0 x6 h3 y54 ff2 fs0 fc0 sc0 ls0 ws0">rendered and/or<span class="_ _0"></span> products offered <span class="_ _0"></span>by the Trip Pro<span class="_ _3"></span>vider.<span class="_ _5"></span> </div><div class="t m0 x2 h3 y55 ff2 fs0 fc0 sc0 ls0 ws0">Note <span class="_ _11"> </span>that <span class="_ _11"> </span>you <span class="_ _11"> </span>are <span class="_ _11"> </span>not <span class="_ _f"> </span>en<span class="_ _5"></span>titled <span class="_ _11"> </span>to <span class="_ _11"> </span>any <span class="_ _11"> </span>repaym<span class="_ _3"></span>ent  o<span class="_ _3"></span>f<span class="_ _5"></span> <span class="_ _11"> </span>any <span class="_ _11"> </span>(pre)pa<span class="_ _0"></span>id <span class="_ _11"> </span>amount  bu<span class="_ _0"></span>t <span class="_ _11"> </span>are <span class="_ _11"> </span>only<span class="_ _3"></span> </div><div class="t m0 x2 h3 y56 ff2 fs0 fc0 sc0 ls0 ws0">entitled <span class="_ _7"></span>to <span class="_ _12"> </span>a <span class="_ _12"> </span>replacement <span class="_ _7"></span>of <span class="_ _12"> </span>your <span class="_ _7"></span>order. <span class="_ _12"> </span>Our <span class="_ _12"></span>customer <span class="_ _7"></span>service <span class="_ _12"> </span>department <span class="_ _7"></span>can <span class="_ _12"> </span>help <span class="_ _12"></span>you <span class="_ _7"></span>if </div><div class="t m0 x2 h3 y57 ff2 fs0 fc0 sc0 ls0 ws0">needed.  </div><div class="t m0 x4 h8 y58 ff1 fs0 fc0 sc0 ls0 ws0">6.<span class="ff4"> <span class="_ _d"> </span></span>Correspondence and<span class="_ _0"></span> Communi<span class="_ _3"></span>cation </div><div class="t m0 x2 h3 y59 ff2 fs0 fc0 sc0 ls0 ws0">By completing Registr<span class="_ _0"></span>ation on t<span class="_ _0"></span>he App, you agre<span class="_ _3"></span>e to receive: </div><div class="t m0 x2 h3 y5a ff2 fs0 fc0 sc0 ls0 ws0"> </div><div class="t m0 x4 h9 y5b ff2 fs0 fc0 sc0 ls0 ws0">(i)<span class="ff6"> <span class="_ _10"> </span></span>an <span class="_ _12"></span>email/ <span class="_ _7"></span>text <span class="_ _12"></span>message <span class="_ _7"></span>which <span class="_ _7"></span>we <span class="_ _12"> </span>may <span class="_ _7"></span>send <span class="_ _12"></span>you <span class="_ _7"></span>shortly <span class="_ _12"> </span>prior <span class="_ _7"></span>to <span class="_ _12"> </span>your <span class="_ _7"></span>registration<span class="ls2">, </span></div><div class="t m0 x7 h3 y5c ff2 fs0 fc0 sc0 ls0 ws0">and providing you<span class="_ _0"></span> with certain <span class="_ _3"></span>information and offers, and </div><div class="t m0 x4 h9 y5d ff2 fs0 fc0 sc0 ls0 ws0">(ii)<span class="ff6"> <span class="_ _7"></span></span> an email/ text message <span class="_ _3"></span>af<span class="_ _5"></span>ter the order<span class="_ _0"></span> to rate the exp<span class="_ _0"></span>erience with your Service.<span class="_ _0"></span> </div><div class="t m0 x2 h3 y5e ff2 fs0 fc0 sc0 ls0 ws0">In <span class="_ _7"></span>order <span class="_ _8"></span>to <span class="_ _7"></span>duly <span class="_ _7"></span>complete <span class="_ _7"></span>and <span class="_ _7"></span>secure <span class="_ _7"></span>your <span class="_ _7"></span>Registration <span class="_ _8"></span>on <span class="_ _7"></span>the <span class="_ _7"></span>App, <span class="_ _7"></span>you <span class="_ _7"></span>need <span class="_ _7"></span>to <span class="_ _7"></span>use <span class="_ _7"></span>your </div><div class="t m0 x2 h3 y5f ff2 fs0 fc0 sc0 ls0 ws0">correct <span class="_ _e"> </span>email <span class="_ _f"> </span>address/ <span class="_ _e"> </span>current <span class="_ _f"> </span>mobile <span class="_ _e"> </span>n<span class="_ _5"></span>umber. <span class="_ _e"> </span>We <span class="_ _f"> </span>are <span class="_ _f"> </span>not <span class="_ _f"> </span>responsible<span class="_ _0"></span> <span class="_ _f"> </span>or <span class="_ _f"> </span>liable <span class="_ _e"> </span>for <span class="_ _f"> </span>(and </div><div class="t m0 x2 h3 y60 ff2 fs0 fc0 sc0 ls0 ws0">have no <span class="_ _5"></span>obligation to verify) any wrong or misspelled email a<span class="_ _5"></span>ddress, or inaccurate or wrong </div><div class="t m0 x2 h3 y61 ff2 fs0 fc0 sc0 ls0 ws0">(mobile) phone <span class="_ _0"></span>number. </div><div class="t m0 x2 h3 y62 ff2 fs0 fc0 sc0 ls0 ws0">Any  claim<span class="_ _3"></span>  or  compl<span class="_ _0"></span>aint <span class="_ _11"> </span>against  the <span class="_ _11"> </span>App  <span class="ls4">or</span> <span class="_ _11"> </span>in  respect <span class="_ _11"> </span>to  the <span class="_ _11"> </span>Goods <span class="_ _11"> </span>provided  must <span class="_ _11"> </span>be </div><div class="t m0 x2 h3 y63 ff2 fs0 fc0 sc0 ls0 ws0">promptly <span class="_ _15"> </span>submitted, <span class="_ _15"> </span>but <span class="_ _15"> </span>in <span class="_ _16"> </span>any <span class="_ _15"> </span>event <span class="_ _15"> </span>within <span class="_ _16"> </span>5 <span class="_ _16"> </span>days <span class="_ _15"> </span>after <span class="_ _16"> </span>the <span class="_ _15"> </span>scheduled <span class="_ _15"> </span>day <span class="_ _16"> </span>of </div><div class="t m0 x2 h3 y64 ff2 fs0 fc0 sc0 ls0 ws0">consummation <span class="_ _12"> </span>of <span class="_ _f"> </span>the <span class="_ _12"> </span>product. <span class="_ _f"> </span>Any <span class="_ _e"> </span>claim <span class="_ _e"> </span>or <span class="_ _e"> </span>complaint <span class="_ _e"> </span>that <span class="_ _f"> </span>is <span class="_ _e"> </span>submitted <span class="_ _12"> </span>after <span class="_ _e"> </span>the <span class="_ _f"> </span>5 <span class="_ _e"> </span>days </div><div class="t m0 x2 h3 y65 ff2 fs0 fc0 sc0 ls0 ws0">period may be reje<span class="_ _0"></span>cted, and the cla<span class="_ _0"></span>imant will forf<span class="_ _0"></span>eit the right to any comp<span class="_ _3"></span>ensation. </div><div class="t m0 x2 h3 y66 ff2 fs0 fc0 sc0 ls0 ws0">If <span class="_ _7"></span>you <span class="_ _7"></span>would <span class="_ _8"></span>like <span class="_ _7"></span>us <span class="_ _7"></span>to <span class="_ _7"></span>remove <span class="_ _8"></span>your <span class="_ _7"></span>personal <span class="_ _7"></span>information <span class="_ _8"></span>from <span class="_ _7"></span>our <span class="_ _8"></span>database, <span class="_ _7"></span>unsubscrib<span class="_ _0"></span>e </div><div class="t m0 x2 h3 y67 ff2 fs0 fc0 sc0 ls0 ws0">from emails and<span class="_ _0"></span>/or SMS, please ema<span class="_ _3"></span>il<span class="_ _5"></span>.  </div></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf6" class="pf w0 h0" data-page-no="6"><div class="pc pc6 w0 h0"><div class="c x1 y1 w2 h0"><div class="t m0 x4 h8 y68 ff1 fs0 fc0 sc0 ls0 ws0">7.<span class="ff4"> <span class="_ _d"> </span></span>Consumer Review<span class="_ _0"></span>s </div><div class="t m0 x2 h3 y69 ff2 fs0 fc0 sc0 ls0 ws0">The completed con<span class="_ _0"></span>sumer reviews may <span class="_ _0"></span>be; </div><div class="t m0 x2 h3 y6a ff2 fs0 fc0 sc0 ls0 ws0">(a) <span class="_ _5"></span>uploaded onto the <span class="_ _5"></span>Provider&apos;s information page for <span class="_ _5"></span>the sole <span class="_ _5"></span>purpose of inf<span class="_ _5"></span>orming (future<span class="_ _0"></span>) </div><div class="t m0 x2 h3 y6b ff2 fs0 fc0 sc0 ls0 ws0">customers of your<span class="_ _0"></span> opinion of t<span class="_ _0"></span>he service (leve<span class="_ _3"></span>l)<span class="_ _5"></span> and quality of t<span class="_ _0"></span>he Goods, and  </div><div class="t m0 x2 h3 y6c ff2 fs0 fc0 sc0 ls0 ws0">(b) <span class="_ _8"></span>(w<span class="_ _0"></span>holly <span class="_ _8"></span>or <span class="_ _5"></span>partly) <span class="_ _8"></span>used <span class="_ _5"></span>and <span class="_ _8"></span>placed <span class="_ _8"></span>by A<span class="_ _5"></span>qua <span class="_ _5"></span>Authentica <span class="_ _8"></span>Limited <span class="_ _8"></span>at <span class="_ _5"></span>its <span class="_ _8"></span>sole <span class="_ _5"></span>discretion <span class="_ _8"></span>on </div><div class="t m0 x2 h3 y6d ff2 fs0 fc0 sc0 ls0 ws0">our <span class="_ _7"></span>social <span class="_ _7"></span>media <span class="_ _7"></span>platforms, <span class="_ _7"></span>special <span class="_ _7"></span>promotions, <span class="_ _8"></span>or <span class="_ _7"></span>other <span class="_ _12"> </span>channels <span class="_ _7"></span>owned, <span class="_ _8"></span>h<span class="_ _5"></span>osted, <span class="_ _7"></span>used, <span class="_ _7"></span>or </div><div class="t m0 x2 h3 y6e ff2 fs0 fc0 sc0 ls0 ws0">controlled by <span class="_ _0"></span>Aqua Authentica Limi<span class="_ _3"></span>ted<span class="_ _5"></span>.  </div><div class="t m0 x2 h3 y6f ff2 fs0 fc0 sc0 ls0 ws0">We <span class="_ _e"> </span>reserve <span class="_ _e"> </span>the <span class="_ _e"> </span>right <span class="_ _e"> </span>to <span class="_ _e"> </span>adjust, <span class="_ _e"> </span>refuse, <span class="_ _e"> </span>or <span class="_ _e"> </span>remove <span class="_ _e"> </span>reviews <span class="_ _e"> </span>a<span class="_ _5"></span>t <span class="_ _e"> </span>our <span class="_ _e"> </span>sole <span class="_ _e"> </span>discretion <span class="_ _e"> </span>insofar <span class="_ _e"> </span>it </div><div class="t m0 x2 h3 y70 ff2 fs0 fc0 sc0 ls0 ws0">violates <span class="_ _11"> </span>our <span class="_ _11"> </span>review <span class="_ _11"> </span>poli<span class="_ _0"></span>cy. <span class="_ _11"> </span>Aqua <span class="_ _11"> </span>Authentica <span class="_ _11"> </span>Limited <span class="_ _11"> </span>does <span class="_ _f"> </span>not <span class="_ _11"> </span>compensate <span class="_ _11"> </span>or <span class="_ _11"> </span>otherwise<span class="_ _0"></span> </div><div class="t m0 x2 h3 y71 ff2 fs0 fc0 sc0 ls0 ws0">reward <span class="_ _5"></span>a <span class="_ _5"></span>customer <span class="_ _5"></span>for <span class="_ _5"></span>completing <span class="_ _5"></span>a <span class="_ _8"></span>rev<span class="_ _0"></span>iew. <span class="_ _5"></span>The <span class="_ _5"></span>guest <span class="_ _5"></span>review <span class="_ _5"></span>form <span class="_ _8"></span>s<span class="_ _0"></span>hould <span class="_ _5"></span>be <span class="_ _5"></span>regarded <span class="_ _5"></span>as <span class="_ _5"></span>a </div><div class="t m0 x2 h3 y72 ff2 fs0 fc0 sc0 ls0 ws0">survey  and <span class="_ _c"> </span>does <span class="_ _c"> </span>not <span class="_ _c"> </span>include  any <span class="_ _c"> </span>(further  commercial) <span class="_ _c"> </span>offers, <span class="_ _c"> </span>invitations,  or <span class="_ _c"> </span>incentives </div><div class="t m0 x2 h3 y73 ff2 fs0 fc0 sc0 ls0 ws0">whatsoever.  </div><div class="t m0 x2 h3 y74 ff2 fs0 fc0 sc0 ls0 ws0">We may include links to third party websites at <span class="_ _5"></span>any time. However, the existence of a link to </div><div class="t m0 x2 h3 y75 ff2 fs0 fc0 sc0 ls0 ws0">another <span class="_ _8"></span>site <span class="_ _7"></span>should <span class="_ _7"></span>not <span class="_ _8"></span>be <span class="_ _7"></span>considered <span class="_ _7"></span>as <span class="_ _7"></span>an <span class="_ _7"></span>affil<span class="_ _0"></span>iation <span class="_ _7"></span>or <span class="_ _8"></span>partnership <span class="_ _7"></span>with <span class="_ _8"></span>a <span class="_ _12"></span>third <span class="_ _8"></span>party <span class="_ _7"></span>or </div><div class="t m0 x2 h3 y76 ff2 fs0 fc0 sc0 ls0 ws0">seen <span class="_ _5"></span>as <span class="_ _5"></span>a <span class="_ _5"></span>support of <span class="_ _5"></span>a <span class="_ _5"></span>particular <span class="_ _5"></span>website unless <span class="_ _5"></span>otherwise <span class="_ _5"></span>specified. <span class="_ _5"></span>The <span class="_ _5"></span>creation of <span class="_ _5"></span>a <span class="_ _5"></span>link <span class="_ _5"></span>to </div><div class="t m0 x2 h3 y77 ff2 fs0 fc0 sc0 ls0 ws0">our App is strictly forbidden withou<span class="_ _0"></span>t our prior written consent. Additio<span class="_ _0"></span>nally, we reserve the </div><div class="t m0 x2 h3 y78 ff2 fs0 fc0 sc0 ls0 ws0">right to revoke our co<span class="_ _3"></span>nsent without notice or justi<span class="_ _3"></span>f<span class="_ _5"></span>ication. </div><div class="t m0 x4 h8 y79 ff1 fs0 fc0 sc0 ls0 ws0">8.<span class="ff4"> <span class="_ _d"> </span></span>Disclaimer </div><div class="t m0 x2 h3 y7a ff2 fs0 fc0 sc0 ls0 ws0">Subject <span class="_ _8"></span>to <span class="_ _7"></span>the <span class="_ _8"></span>limitations <span class="_ _8"></span>set <span class="_ _7"></span>out <span class="_ _8"></span>in <span class="_ _7"></span>these <span class="_ _8"></span>terms <span class="_ _8"></span>and <span class="_ _7"></span>conditions <span class="_ _8"></span>and <span class="_ _8"></span>to <span class="_ _7"></span>the <span class="_ _8"></span>extent <span class="_ _7"></span>permitted </div><div class="t m0 x2 h3 y7b ff2 fs0 fc0 sc0 ls0 ws0">by <span class="_ _5"></span>law, <span class="_ _5"></span>we <span class="_ _8"></span>w<span class="_ _0"></span>ill <span class="_ _5"></span>only <span class="_ _5"></span>be <span class="_ _8"></span>l<span class="_ _0"></span>iable <span class="_ _5"></span>for <span class="_ _8"></span>d<span class="_ _3"></span>irect <span class="_ _8"></span>dam<span class="_ _0"></span>ages actually <span class="_ _8"></span>su<span class="_ _0"></span>ffered, <span class="_ _5"></span>paid, <span class="_ _5"></span>or <span class="_ _5"></span>incurred <span class="_ _5"></span>by <span class="_ _8"></span>yo<span class="_ _3"></span>u </div><div class="t m0 x2 h3 y7c ff2 fs0 fc0 sc0 ls0 ws0">due <span class="_ _e"> </span>to <span class="_ _e"> </span>an <span class="_ _e"> </span>attributable <span class="_ _12"> </span>shortcoming <span class="_ _e"> </span>of <span class="_ _12"> </span>our <span class="_ _e"> </span>obligations <span class="_ _12"> </span>in <span class="_ _f"> </span>respect <span class="_ _12"> </span>to <span class="_ _e"> </span>our <span class="_ _e"> </span>services<span class="_ _5"></span>, <span class="_ _e"> </span>up <span class="_ _e"> </span>to <span class="_ _e"> </span>an </div><div class="t m0 x2 h3 y7d ff2 fs0 fc0 sc0 ls0 ws0">aggregate <span class="_ _7"></span>amount <span class="_ _7"></span>of <span class="_ _7"></span>th<span class="_ _5"></span>e <span class="_ _7"></span>aggregate <span class="_ _7"></span>cost <span class="_ _7"></span>of <span class="_ _12"> </span>your <span class="_ _7"></span>order <span class="_ _12"></span>as <span class="_ _7"></span>set <span class="_ _12"></span>out <span class="_ _7"></span>in <span class="_ _7"></span>th<span class="_ _5"></span>e <span class="_ _7"></span>order <span class="_ _7"></span>con<span class="_ _5"></span>firmatio<span class="_ _0"></span>n </div><div class="t m0 x2 h3 y7e ff2 fs0 fc0 sc0 ls0 ws0">email/ text message.<span class="_ _3"></span> </div><div class="t m0 x2 h3 y7f ff2 fs0 fc0 sc0 ls0 ws0">However <span class="_ _8"></span>and <span class="_ _7"></span>to <span class="_ _7"></span>the <span class="_ _8"></span>extent <span class="_ _7"></span>permitted <span class="_ _8"></span>by <span class="_ _7"></span>law, <span class="_ _7"></span>neither <span class="_ _8"></span>we <span class="_ _7"></span>nor <span class="_ _7"></span>any <span class="_ _8"></span>of <span class="_ _7"></span>our <span class="_ _8"></span>officers, <span class="_ _7"></span>directors, </div><div class="t m0 x2 h3 y80 ff2 fs0 fc0 sc0 ls0 ws0">employees, <span class="_ _17"> </span>representatives, <span class="_ _17"> </span>subsidi<span class="_ _0"></span>aries, <span class="_ _17"> </span>affiliated <span class="_ _17"> </span>companies, <span class="_ _17"> </span>distributors, <span class="_ _17"> </span>affiliate<span class="_ _3"></span> </div><div class="t m0 x2 h3 y81 ff2 fs0 fc0 sc0 ls0 ws0">(distribution) <span class="_ _13"> </span>partners, <span class="_ _15"> </span>lice<span class="_ _3"></span>n<span class="_ _5"></span>sees, <span class="_ _15"> </span>age<span class="_ _3"></span>nts, <span class="_ _15"> </span>or <span class="_ _15"> </span>others <span class="_ _13"> </span>involved <span class="_ _15"> </span>i<span class="_ _0"></span>n <span class="_ _15"> </span>cre<span class="_ _0"></span>ating, <span class="_ _15"> </span>spo<span class="_ _3"></span>n<span class="_ _5"></span>soring<span class="_ _0"></span>, </div><div class="t m0 x2 h3 y82 ff2 fs0 fc0 sc0 ls0 ws0">promoting, or oth<span class="_ _0"></span>erwise making avail<span class="_ _0"></span>able the Ap<span class="_ _3"></span>p<span class="_ _5"></span> and its contents wi<span class="_ _0"></span>ll be liable for;<span class="_ _0"></span> </div><div class="t m0 x8 h9 y83 ff2 fs0 fc0 sc0 ls0 ws0">(i)<span class="ff6"> <span class="_ _18"> </span></span>any <span class="_ _10"> </span>punitive, <span class="_ _b"> </span>special, <span class="_ _10"> </span>indirect, <span class="_ _b"> </span>or <span class="_ _10"> </span>consequential <span class="_ _b"> </span>loss <span class="_ _10"> </span>or <span class="_ _b"> </span>damages, <span class="_ _10"> </span>any <span class="_ _b"> </span>loss <span class="_ _10"> </span>of </div><div class="t m0 x9 h3 y84 ff2 fs0 fc0 sc0 ls0 ws0">production, <span class="_ _f"> </span>loss <span class="_ _11"> </span>of <span class="_ _f"> </span>profit, <span class="_ _11"> </span>loss <span class="_ _f"> </span>of <span class="_ _11"> </span>revenue, <span class="_ _f"> </span>loss <span class="_ _f"> </span>of <span class="_ _11"> </span>contract, <span class="_ _11"> </span>loss <span class="_ _f"> </span>of <span class="_ _11"> </span>or <span class="_ _f"> </span>damage <span class="_ _11"> </span>to </div><div class="t m0 x9 h3 y85 ff2 fs0 fc0 sc0 ls0 ws0">goodwill or rep<span class="_ _0"></span>utation, loss o<span class="_ _0"></span>f claim,  </div></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf7" class="pf w0 h0" data-page-no="7"><div class="pc pc7 w0 h0"><div class="c x1 y1 w2 h0"><div class="t m0 x8 h9 y2a ff2 fs0 fc0 sc0 ls0 ws0">(ii)<span class="ff6"> <span class="_ _19"> </span></span>any <span class="_ _12"> </span>(direct, <span class="_ _12"> </span>in<span class="_ _5"></span>direct, <span class="_ _7"></span>consequential, <span class="_ _12"> </span>or <span class="_ _e"> </span>punitive) <span class="_ _12"></span>damages, <span class="_ _12"> </span>losses, <span class="_ _12"> </span>or <span class="_ _e"> </span>costs <span class="_ _12"> </span>suffered, </div><div class="t m0 x9 h3 y87 ff2 fs0 fc0 sc0 ls0 ws0">incurred, <span class="_ _8"></span>or <span class="_ _8"></span>paid <span class="_ _7"></span>by <span class="_ _7"></span>you, <span class="_ _8"></span>pursuant <span class="_ _8"></span>to, <span class="_ _8"></span>arising <span class="_ _7"></span>out <span class="_ _8"></span>of <span class="_ _8"></span>or <span class="_ _7"></span>in <span class="_ _8"></span>connection <span class="_ _8"></span>with <span class="_ _8"></span>the <span class="_ _7"></span>use, </div><div class="t m0 x9 h3 y88 ff2 fs0 fc0 sc0 ls0 ws0">inability to use, or de<span class="_ _0"></span>lay of our App, or<span class="_ _0"></span>  </div><div class="t m0 x8 h9 y89 ff2 fs0 fc0 sc0 ls0 ws0">(iii)<span class="ff6"> <span class="_ _1a"> </span></span>any <span class="_ _f"> </span>(personal) <span class="_ _f"> </span>injury, <span class="_ _11"> </span>death, <span class="_ _f"> </span>property <span class="_ _f"> </span>damage, <span class="_ _f"> </span>or <span class="_ _11"> </span>other <span class="_ _f"> </span>damages, <span class="_ _f"> </span>losses, <span class="_ _f"> </span>or <span class="_ _11"> </span>costs </div><div class="t m0 x9 h3 y8a ff2 fs0 fc0 sc0 ls0 ws0">suffered, <span class="_ _11"> </span>incurred <span class="_ _11"> </span>or  paid <span class="_ _11"> </span>by  you<span class="_ _0"></span>, <span class="_ _11"> </span>wheth<span class="_ _5"></span>er <span class="_ _11"> </span>due <span class="_ _11"> </span>to<span class="_ _5"></span>  (legal) <span class="_ _11"> </span>acts,  err<span class="_ _0"></span>ors, <span class="_ _11"> </span>breaches, </div><div class="t m0 x9 h3 y8b ff2 fs0 fc0 sc0 ls0 ws0">(gross) <span class="_ _19"> </span>neglig<span class="_ _0"></span>ence, <span class="_ _1b"> </span>willful <span class="_ _1b"> </span>misconduct, <span class="_ _1b"> </span>omissions, <span class="_ _1b"> </span>non-performance, </div><div class="t m0 x9 h3 y8c ff2 fs0 fc0 sc0 ls0 ws0">misrepresentations<span class="_ _3"></span>, <span class="_ _8"></span>tort <span class="_ _8"></span>or <span class="_ _8"></span>strict <span class="_ _8"></span>liability <span class="_ _8"></span>by <span class="_ _8"></span>or<span class="_ _0"></span> <span class="_ _8"></span>(wholly <span class="_ _8"></span>or <span class="_ _5"></span>p<span class="_ _5"></span>artly) <span class="_ _8"></span>attributable <span class="_ _8"></span>to <span class="_ _8"></span>the<span class="_ _0"></span> </div><div class="t m0 x9 h3 y8d ff2 fs0 fc0 sc0 ls0 ws0">Provider <span class="_ _8"></span>including <span class="_ _8"></span>any <span class="_ _7"></span>(partial) <span class="_ _8"></span>cancellation, <span class="_ _8"></span>overbooking, <span class="_ _8"></span>strike, <span class="_ _7"></span>force <span class="_ _8"></span>majeure, <span class="_ _8"></span>or </div><div class="t m0 x9 h3 y8e ff2 fs0 fc0 sc0 ls0 ws0">any other eve<span class="_ _0"></span>nt beyond ou<span class="_ _0"></span>r control. </div><div class="t m0 x4 h8 y8f ff1 fs0 fc0 sc0 ls0 ws0">9.<span class="ff4"> <span class="_ _d"> </span></span>Intellectual Proper<span class="_ _3"></span>t<span class="_ _5"></span>y Rights </div><div class="t m0 x2 h3 y53 ff2 fs0 fc0 sc0 ls0 ws0">Unless stated otherwise, the software required for our services or <span class="_ _5"></span>availab<span class="_ _5"></span>le at or used by <span class="_ _5"></span>our </div><div class="t m0 x2 h3 y54 ff2 fs0 fc0 sc0 ls0 ws0">App  and  t<span class="_ _3"></span>he  intellectual <span class="_ _11"> </span>property  rights <span class="_ _11"> </span>(including  t<span class="_ _0"></span>he  copyrig<span class="_ _0"></span>hts)  of<span class="_ _0"></span>  the  contents  an<span class="_ _0"></span>d </div><div class="t m0 x2 h3 y55 ff2 fs0 fc0 sc0 ls0 ws0">information of a<span class="_ _0"></span>nd material on our <span class="_ _0"></span>App are own<span class="_ _0"></span>ed by Aqua Authe<span class="_ _3"></span>n<span class="_ _5"></span>tica Limited.<span class="_ _0"></span> </div><div class="t m0 x2 h3 y90 ff2 fs0 fc0 sc0 ls0 ws0">We <span class="_ _f"> </span>exclusively <span class="_ _f"> </span>retain <span class="_ _f"> </span>ownership <span class="_ _f"> </span>of <span class="_ _f"> </span>all <span class="_ _f"> </span>rights, <span class="_ _f"> </span>title <span class="_ _f"> </span>and <span class="_ _f"> </span>interest <span class="_ _f"> </span>in <span class="_ _f"> </span>and <span class="_ _f"> </span>to <span class="_ _11"> </span>(all <span class="_ _f"> </span>intellectua<span class="_ _3"></span>l </div><div class="t m0 x2 h3 y91 ff2 fs0 fc0 sc0 ls0 ws0">property <span class="_ _12"> </span>rights <span class="_ _e"> </span>of) <span class="_ _e"> </span>(the <span class="_ _12"> </span>look <span class="_ _f"> </span>and <span class="_ _12"> </span>feel <span class="_ _e"> </span>(including <span class="_ _e"> </span>infrastructure) <span class="_ _12"> </span>of) <span class="_ _e"> </span>the <span class="_ _e"> </span>App <span class="_ _e"> </span>on <span class="_ _e"> </span>which <span class="_ _e"> </span>the </div><div class="t m0 x2 h3 y10 ff2 fs0 fc0 sc0 ls9 ws0">Good<span class="ls0"> <span class="_ _11"> </span>is <span class="_ _f"> </span>made <span class="_ _f"> </span>available <span class="_ _f"> </span>an<span class="_ _5"></span>d <span class="_ _f"> </span>you <span class="_ _11"> </span>are <span class="_ _f"> </span>not <span class="_ _11"> </span>e<span class="_ _0"></span>ntitled <span class="_ _f"> </span>to <span class="_ _11"> </span>copy,<span class="_ _0"></span> <span class="_ _11"> </span>scrape, <span class="_ _e"> </span>(h<span class="_ _5"></span>yper-/deep) <span class="_ _f"> </span>link <span class="_ _11"> </span>to,<span class="_ _3"></span> </span></div><div class="t m0 x2 h3 y92 ff2 fs0 fc0 sc0 ls0 ws0">publish, <span class="_ _e"> </span>promote, <span class="_ _f"> </span>market, <span class="_ _e"> </span>integrate, <span class="_ _f"> </span>utilize, <span class="_ _e"> </span>combine <span class="_ _f"> </span>or <span class="_ _f"> </span>otherwise<span class="_ _0"></span> <span class="_ _f"> </span>use <span class="_ _e"> </span>the <span class="_ _11"> </span>content <span class="_ _e"> </span>or <span class="_ _f"> </span>our </div><div class="t m0 x2 h3 y93 ff2 fs0 fc0 sc0 ls0 ws0">brand without ou<span class="_ _3"></span>r express written permission.<span class="_ _3"></span>  </div><div class="t m0 x2 h3 y94 ff2 fs0 fc0 sc0 ls0 ws0">To <span class="_ _f"> </span>the <span class="_ _11"> </span>extent <span class="_ _11"> </span>that <span class="_ _f"> </span>you <span class="_ _11"> </span>would <span class="_ _f"> </span>(wholly <span class="_ _f"> </span>or <span class="_ _11"> </span>partly) <span class="_ _f"> </span>use <span class="_ _11"> </span>or <span class="_ _f"> </span>combine <span class="_ _11"> </span>our <span class="_ _f"> </span>content <span class="_ _11"> </span> <span class="_ _f"> </span>or <span class="_ _11"> </span>would </div><div class="t m0 x2 h3 y95 ff2 fs0 fc0 sc0 ls0 ws0">otherwise <span class="_ _11"> </span>own  any <span class="_ _11"> </span>intellectual <span class="_ _11"> </span>property <span class="_ _11"> </span>rights  in <span class="_ _11"> </span>the <span class="_ _11"> </span>App  or <span class="_ _11"> </span>any  content <span class="_ _11"> </span>or <span class="_ _11"> </span>consumer </div><div class="t m0 x2 h3 y96 ff2 fs0 fc0 sc0 ls0 ws0">reviews, <span class="_ _11"> </span>you<span class="_ _0"></span> <span class="_ _f"> </span>hereby <span class="_ _11"> </span>assign, <span class="_ _f"> </span>transfer <span class="_ _11"> </span>and <span class="_ _f"> </span>set <span class="_ _11"> </span>o<span class="_ _0"></span>ver <span class="_ _f"> </span>all <span class="_ _11"> </span>such <span class="_ _f"> </span>intellectual <span class="_ _11"> </span>proper<span class="_ _0"></span>ty <span class="_ _f"> </span>righ<span class="_ _5"></span>ts <span class="_ _11"> </span>to<span class="_ _3"></span> </div><div class="t m0 x2 h3 y97 ff2 fs0 fc0 sc0 ls0 ws0">Aqua <span class="_ _c"> </span>Authentica <span class="_ _c"> </span>Limited. <span class="_ _a"> </span>Any <span class="_ _a"> </span>unlawful <span class="_ _c"> </span>use <span class="_ _c"> </span>or <span class="_ _c"> </span>an<span class="_ _5"></span>y <span class="_ _c"> </span>of <span class="_ _a"> </span>the <span class="_ _a"> </span>aforementioned  actions <span class="_ _a"> </span>or </div><div class="t m0 x2 h3 y98 ff2 fs0 fc0 sc0 ls0 ws0">behavior <span class="_ _15"> </span>will <span class="_ _15"> </span>constitut<span class="_ _0"></span>e <span class="_ _15"> </span>a <span class="_ _15"> </span>material <span class="_ _15"> </span>infringement <span class="_ _15"> </span>of <span class="_ _15"> </span>our <span class="_ _15"> </span>intelle<span class="_ _3"></span>ctual <span class="_ _16"> </span>property <span class="_ _15"> </span>right<span class="_ _0"></span>s </div><div class="t m0 x2 h3 y99 ff2 fs0 fc0 sc0 ls0 ws0">(including copyrig<span class="_ _3"></span>h<span class="_ _5"></span>t and database r<span class="_ _0"></span>ight). </div><div class="t m0 x2 h3 y9a ff2 fs0 fc0 sc0 ls0 ws0"> </div><div class="t m0 x4 h8 y9b ff1 fs0 fc0 sc0 ls0 ws0">10.<span class="ff4"> <span class="_ _7"></span></span>Applicable law, <span class="_ _0"></span>jurisdiction <span class="_ _3"></span>&amp;<span class="_ _5"></span> dispute reso<span class="_ _3"></span>lution </div><div class="t m0 x2 h3 y9c ff2 fs0 fc0 sc0 ls0 ws0">These <span class="_ _11"> </span>terms <span class="_ _e"> </span>and <span class="_ _11"> </span>condit<span class="_ _0"></span>ions <span class="_ _11"> </span>and <span class="_ _f"> </span>the <span class="_ _f"> </span>provision <span class="_ _f"> </span>of <span class="_ _11"> </span>our <span class="_ _f"> </span>services <span class="_ _f"> </span>shall <span class="_ _11"> </span>be <span class="_ _f"> </span>governed <span class="_ _f"> </span>by <span class="_ _11"> </span>and </div><div class="t m0 x2 h3 y9d ff2 fs0 fc0 sc0 lsa ws0">co<span class="ls0">nstrued <span class="_ _7"></span>in <span class="_ _7"></span>accordance <span class="_ _7"></span>wi<span class="_ _5"></span>th <span class="_ _7"></span>Kenyan <span class="_ _12"></span>law. <span class="_ _7"></span>Any <span class="_ _7"></span>dispute <span class="_ _7"></span>arising <span class="_ _12"></span>out <span class="_ _7"></span>of <span class="_ _12"></span>these <span class="_ _7"></span>general <span class="_ _7"></span>terms </span></div><div class="t m0 x2 h3 y9e ff2 fs0 fc0 sc0 ls0 ws0">and <span class="_ _12"></span>conditions <span class="_ _7"></span>and <span class="_ _12"> </span>our <span class="_ _7"></span>services <span class="_ _12"> </span>shall <span class="_ _12"> </span>exclusively <span class="_ _7"></span>be <span class="_ _12"></span>submitted <span class="_ _7"></span>to <span class="_ _12"> </span>the <span class="_ _12"> </span>competent <span class="_ _12"></span>court<span class="_ _5"></span>s <span class="_ _7"></span>in </div><div class="t m0 x2 h3 y9f ff2 fs0 fc0 sc0 ls0 ws0">Kenya.  </div><div class="t m0 x2 h3 ya0 ff2 fs0 fc0 sc0 ls0 ws0">If <span class="_ _8"></span>any <span class="_ _8"></span>provis<span class="_ _3"></span>ion <span class="_ _8"></span>of <span class="_ _8"></span>these <span class="_ _8"></span>ter<span class="_ _0"></span>ms <span class="_ _8"></span>and <span class="_ _8"></span>co<span class="_ _3"></span>n<span class="_ _5"></span>ditions <span class="_ _5"></span>is <span class="_ _8"></span>or <span class="_ _8"></span>becomes <span class="_ _5"></span>invalid, <span class="_ _8"></span>une<span class="_ _0"></span>nforceable <span class="_ _8"></span>or<span class="_ _0"></span> <span class="_ _8"></span>non-</div><div class="t m0 x2 h3 ya1 ff2 fs0 fc0 sc0 ls0 ws0">binding, <span class="_ _8"></span>you <span class="_ _8"></span>s<span class="_ _3"></span>h<span class="_ _5"></span>all <span class="_ _8"></span>remai<span class="_ _0"></span>n <span class="_ _8"></span>bound <span class="_ _5"></span>by <span class="_ _8"></span>all <span class="_ _8"></span>other <span class="_ _8"></span>provisio<span class="_ _3"></span>n<span class="_ _5"></span>s <span class="_ _8"></span>hereof. <span class="_ _8"></span>I<span class="_ _3"></span>n<span class="_ _5"></span> <span class="_ _8"></span>such <span class="_ _5"></span>event, <span class="_ _8"></span>such <span class="_ _8"></span>invali<span class="_ _0"></span>d </div><div class="t m0 x2 h3 ya2 ff2 fs0 fc0 sc0 ls0 ws0">provision shall no<span class="_ _0"></span>netheless be enfor<span class="_ _0"></span>ced to the fullest ex<span class="_ _0"></span>tent permitted by applicab<span class="_ _0"></span>le law, and<span class="_ _0"></span> </div></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf8" class="pf w0 h0" data-page-no="8"><div class="pc pc8 w0 h0"><img class="bi x0 y14 w1 hc" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA40AAABNCAIAAACNNhZHAAAACXBIWXMAABYlAAAWJQFJUiTwAAABUUlEQVR42u3WMQEAAAjDMMC/52FjRyKhVzfJAABAmZMAAACfCgAAPhUAAJ8KAAA+FQAAnwoAAD4VAAB8KgAAPhUAAHwqAAA+FQAAfCoAAD4VAAB8KgAA+FQAAHwqAAD4VAAAfCoAAPhUAAB8KgAA+FQAAPCpAAD4VAAA8KkAAPhUAADwqQAA+FQAAPCpAADgUwEA8KkAAOBTAQDwqQAA4FMBAPCpAADgUwEAwKcCAOBTAQDApwIA4FMBAMCnAgDgUwEAwKcCAIBPBQDApwIAgE8FAMCnAgCATwUAwKcCAIBPBQAAnwoAgE8FAACfCgCATwUAAJ8KAIBPBQAAnwoAAD4VAACfCgAAPhUAAJ8KAAA+FQAAnwoAAD4VAAB8KgAAPhUAAHwqAAA+FQAAfCoAAPhUAAB8KgAA+FQAAHwqAAD4VAAAfCoAAPhUAADwqQAA1HqUMAOXwO5P3QAAAABJRU5ErkJggg=="/><div class="c x1 y1 w2 h0"><div class="t m0 x2 h3 y2a ff2 fs0 fc0 sc0 ls0 ws0">you <span class="_ _5"></span>will <span class="_ _5"></span>at <span class="_ _5"></span>least <span class="_ _8"></span>agree to <span class="_ _5"></span>accept <span class="_ _5"></span>a <span class="_ _5"></span>simil<span class="_ _5"></span>ar <span class="_ _5"></span>effect <span class="_ _5"></span>as <span class="_ _5"></span>the <span class="_ _5"></span>invalid, <span class="_ _5"></span>unenforceable or <span class="_ _5"></span>non<span class="_ _8"></span>-bind<span class="_ _0"></span>ing </div><div class="t m0 x2 h3 y87 ff2 fs0 fc0 sc0 ls0 ws0">provision, give<span class="_ _0"></span>n the contents a<span class="_ _3"></span>n<span class="_ _5"></span>d purpose of t<span class="_ _3"></span>h<span class="_ _5"></span>ese terms and <span class="_ _3"></span>con<span class="_ _5"></span>ditio<span class="_ _0"></span>ns. </div></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+
+</body>
+</html>

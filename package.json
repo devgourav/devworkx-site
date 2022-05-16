@@ -5,7 +5,7 @@
     "scripts": {
         "start": "node_modules/.bin/gulp watch"
     },
-    "description": "Agency is a one page HTML theme for Bootstrap.",
+    "description": "DevworlxLabs Static Website",
     "keywords": [
         "css",
         "sass",
@@ -14,20 +14,13 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/agency",
-    "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-agency/issues",
-        "email": "feedback@startbootstrap.com"
-    },
-    "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (http://davidmiller.io/)"
+    "browserslist": [
+        "defaults",
+        "not IE 11",
+        "maintained node versions"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-agency.git"
-    },
+    "license": "MIT",
+    "author": "Debadutta Gourav",
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.10.2",
         "bootstrap": "4.3.1",
@@ -43,7 +36,7 @@
         "gulp-header": "2.0.9",
         "gulp-plumber": "^1.2.1",
         "gulp-rename": "1.4.0",
-        "gulp-sass": "4.0.2",
+        "gulp-sass": "4.1.1",
         "gulp-uglify": "3.0.2",
         "merge-stream": "2.0.0"
     }
